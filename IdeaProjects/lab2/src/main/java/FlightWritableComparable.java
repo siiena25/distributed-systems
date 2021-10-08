@@ -17,10 +17,14 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     }
 
     @Override
-    public int compareTo(@Nullable FlightWritableComparable flight) {
+    public int compareTo(FlightWritableComparable flight) {
         if (airportId > flight.airportId) {
             return 1;
-        } else if ()
+        } else if (airportId != flight.airportId) {
+            return -1;
+        }
+
+        
         return 0;
     }
 
