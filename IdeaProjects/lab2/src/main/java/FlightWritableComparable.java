@@ -1,5 +1,7 @@
+import com.sun.istack.internal.NotNull;
 import org.apache.hadoop.io.WritableComparable;
 
+import javax.annotation.Nullable;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
@@ -15,7 +17,8 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     }
 
     @Override
-    public int compareTo(FlightWritableComparable o) {
+    public int compareTo(@Nullable FlightWritableComparable flight) {
+        
         return 0;
     }
 
