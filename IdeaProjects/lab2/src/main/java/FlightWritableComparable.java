@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class FlightWritableComparable implements WritableComparable<FlightWritableComparable> {
 
-    private int airoportId
+    private int airoportId;
+    private int code;
 
     @Override
     public int compareTo(FlightWritableComparable o) {
