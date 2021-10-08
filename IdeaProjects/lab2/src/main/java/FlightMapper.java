@@ -8,10 +8,8 @@ public class FlightMapper extends Mapper<LongWritable, Text, Text, FlightWritabl
     @Override
     protected void map(LongWritable key,
                        Text value,
-                       Mapper<LongWritable, Text, Text, FlightWritableComparable>.Context context)
-            throws
-            IOException,
-            InterruptedException {
+                       Context context)
+            throws IOException, InterruptedException {
         super.map(key, value, context);
     }
 }
