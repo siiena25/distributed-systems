@@ -9,6 +9,11 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     private int airportId;
     private int code;
 
+    public FlightWritableComparable(int airportId, int code) {
+        this.airportId = airportId;
+        this.code = code;
+    }
+
     @Override
     public int compareTo(FlightWritableComparable o) {
         return 0;
