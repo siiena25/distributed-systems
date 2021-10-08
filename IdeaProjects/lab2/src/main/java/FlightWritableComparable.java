@@ -1,7 +1,5 @@
-import com.sun.istack.internal.NotNull;
 import org.apache.hadoop.io.WritableComparable;
 
-import javax.annotation.Nullable;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
@@ -13,6 +11,22 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
 
     public FlightWritableComparable(int airportId, int code) {
         this.airportId = airportId;
+        this.code = code;
+    }
+
+    public int getAirportId() {
+        return airportId;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setAirportId(int airportId) {
+        this.airportId = airportId;
+    }
+
+    public void setCode(int code) {
         this.code = code;
     }
 
