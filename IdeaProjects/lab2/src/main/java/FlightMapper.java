@@ -12,7 +12,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, Text, FlightWritabl
             throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
-            String airportId = 
+            String airportId = line[0].replaceAll("")
         }
         super.map(key, value, context);
     }
