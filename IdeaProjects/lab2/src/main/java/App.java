@@ -18,6 +18,7 @@ public class App {
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightsMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setPartitionerClass(AirportsPartitioner.class);
+        job.setGroupingComparatorClass(AirportsGroupingComparatorClass.class);
         job.setMapperClass(AirportsMapper.class);
         job.setReducerClass(DelayReducer.class);
         job.setMapOutputKeyClass(FlightWritableComparable.class);
