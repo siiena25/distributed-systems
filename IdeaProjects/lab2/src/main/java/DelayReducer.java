@@ -23,5 +23,6 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             max = Math.max(max, flightDelay);
             sum += flightDelay;
         }
+        context.write();
     }
 }
