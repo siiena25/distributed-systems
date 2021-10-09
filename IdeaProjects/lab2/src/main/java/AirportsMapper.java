@@ -4,7 +4,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
+public class AirportsMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
     @Override
     protected void map(LongWritable key,
                        Text value,
