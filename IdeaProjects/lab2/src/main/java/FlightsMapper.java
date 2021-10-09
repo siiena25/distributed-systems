@@ -25,7 +25,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
                 delay = 0;
             }
             if (delay > 0) {
-                
+                int airportId = Integer.parseInt(line[AIRPORT_ID]);
             }
         }
     }
