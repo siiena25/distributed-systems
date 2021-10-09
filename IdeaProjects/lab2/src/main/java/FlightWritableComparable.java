@@ -46,6 +46,16 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
         return 0;
     }
 
+    public int compareByAirportId(FlightWritableComparable firstItem, FlightWritableComparable secondItem) {
+        if (firstItem.getAirportId() > secondItem.getAirportId()) {
+            return 1;
+        } else if (firstItem.getAirportId() < secondItem.getAirportId()) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+
     @Override
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeInt(airportId);
