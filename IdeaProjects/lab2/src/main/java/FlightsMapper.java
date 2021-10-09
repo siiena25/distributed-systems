@@ -18,12 +18,8 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
         super.map(key, value, context);
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
-            String airportId = line[0].replaceAll("\"", "");
-            String code = line[1].replaceAll("\"", "");
-            context.write(
-                    new FlightWritableComparable(Integer.parseInt(airportId), 0),
-                    new Text(code)
-            );
+            float delay = 0;
+            
         }
     }
 }
