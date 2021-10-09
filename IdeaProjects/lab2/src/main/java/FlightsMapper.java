@@ -19,7 +19,9 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
             float delay = 0;
-            
+            try {
+                delay = 
+            }
         }
     }
 }
