@@ -11,7 +11,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, Text, FlightWritabl
                        Context context)
             throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
-        
+        if (key.ge)
         super.map(key, value, context);
     }
 }
