@@ -15,7 +15,6 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
             LongWritable key,
             Text value,
             Mapper.Context context) throws IOException, InterruptedException {
-        super.map(key, value, context);
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
             float delay;
