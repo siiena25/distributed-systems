@@ -3,6 +3,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class App {
@@ -14,7 +15,7 @@ public class App {
         Job job = Job.getInstance();
         job.setJarByClass(App.class);
         job.setJobName("Join");
-        MultipleInputs.addInputPath(job, new Path(args[0]));
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setMapperClass(AirportsMapper.class);
         job.setReducerClass(DelayReducer.class);
