@@ -13,7 +13,7 @@ public class App {
         }
         Job job = Job.getInstance();
         job.setJarByClass(App.class);
-        job.setJobName("Word count");
+        job.setJobName("Join");
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         job.setMapperClass(FlightMapper.class);
