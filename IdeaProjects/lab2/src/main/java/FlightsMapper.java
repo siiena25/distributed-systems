@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlightsMapper extends Mapper<LongWritable, Text, Text, FlightWritableComparable> {
+public class FlightsMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
 
     private static final int AIRPORT_ID = 14;
     private static final int AIRPORT_DELAY = 18;
@@ -14,7 +14,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, FlightWritab
     protected void map(
             LongWritable key,
             Text value,
-            Mapper<LongWritable, Text, Text, FlightWritableComparable>.Context context) throws IOException, InterruptedException {
+            Mapper<LongWritable, Text, FlightWritableComparable, Text>.Context context) throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
             float delay;
@@ -26,8 +26,8 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, FlightWritab
             if (delay > 0) {
                 int airportId = Integer.parseInt(line[AIRPORT_ID]);
                 context.write(
-                        new Text(String.valueOf(delay)),
-                        new FlightWritableComparable(airportId, 1)
+                        new FlightWritableComparable(airportId, 1),
+                        new Text(String.valueOf(delay))
                 );
             }
         }
