@@ -24,6 +24,6 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             max = Math.max(max, flightDelay);
             sum += flightDelay;
         }
-        context.write(new Text(airportName), );
+        context.write(new Text(airportName), new Text("Minimum delay time: " ));
     }
 }
