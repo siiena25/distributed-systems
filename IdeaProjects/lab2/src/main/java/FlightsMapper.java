@@ -20,7 +20,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
         if (key.get() > 0) {
             float delay;
             try {
-                delay = Float.parseFloat(line[18]);
+                delay = Float.parseFloat(line[AIRPORT_DELAY]);
             } catch (NumberFormatException e) {
                 delay = 0;
             }
