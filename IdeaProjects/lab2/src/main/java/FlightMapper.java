@@ -10,6 +10,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
                        Text value,
                        Context context)
             throws IOException, InterruptedException {
+        super.map(key, value, context);
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
             String airportId = line[0].replaceAll("\"", "");
@@ -19,6 +20,5 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
                     new Text(code)
                     );
         }
-        super.map(key, value, context);
     }
 }
