@@ -24,7 +24,7 @@ public class App {
         job.setReducerClass(DelayReducer.class);
         job.setMapOutputKeyClass(FlightWritableComparable.class);
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
