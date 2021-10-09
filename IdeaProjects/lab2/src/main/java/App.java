@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class App {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            System.err.println("Usage: WordCountApp <airports> <flights>");
+            System.err.println("Usage: App <airports> <flights> <output>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
