@@ -6,6 +6,10 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+    
+    private static final int AIRPORT_ID = 14;
+    private static final int AIRPORT_DELAY = 18;
+
     @Override
     protected void map(
             LongWritable key,
