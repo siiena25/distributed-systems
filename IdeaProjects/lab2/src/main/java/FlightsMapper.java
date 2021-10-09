@@ -28,7 +28,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
                 int airportId = Integer.parseInt(line[AIRPORT_ID]);
                 context.write(
                         new FlightWritableComparable(airportId, 1),
-                        new Text(code)
+                        new Text(String.valueOf(delay))
                 );
             }
         }
