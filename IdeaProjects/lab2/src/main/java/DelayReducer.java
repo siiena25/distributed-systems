@@ -12,12 +12,12 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             Reducer<FlightWritableComparable, Text, Text, Text>.Context context) throws IOException, InterruptedException {
         super.reduce(key, values, context);
         Iterator<Text> iterator = values.iterator();
-        float min = 0;
+        float min = Integer.MAX_VALUE;
         float max = 0;
         float sum = 0;
         int count = 0;
         while (iterator.hasNext()) {
-            
+
         }
     }
 }
