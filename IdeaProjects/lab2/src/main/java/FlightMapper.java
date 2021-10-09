@@ -4,7 +4,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlightMapper extends Mapper<LongWritable, Text, Text, FlightWritableComparable> {
+public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
     @Override
     protected void map(LongWritable key,
                        Text value,
@@ -15,9 +15,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, Text, FlightWritabl
             String airportId = line[0].replaceAll("\"", "");
             String code = line[1].replaceAll("\"", "");
             context.write(
-                    new Text(code), 
-                    new FlightWritableComparable(Integer.parseInt(airportId), 0)
-            );
+                    new FlightWritableComparable(Integer.parseInt(airportId), 0),
+                    new Text(code)
+                    );
         }
         super.map(key, value, context);
     }
