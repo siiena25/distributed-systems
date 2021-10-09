@@ -32,22 +32,6 @@ public class FlightWritableComparable implements WritableComparable {
         this.code = code;
     }
 
-    @Override
-    public int compareTo(FlightWritableComparable flight) {
-        if (airportId > flight.airportId) {
-            return 1;
-        } else if (airportId != flight.airportId) {
-            return -1;
-        }
-
-        if (airportId > flight.code) {
-            return 1;
-        } else if (airportId != flight.code) {
-            return -1;
-        }
-        return 0;
-    }
-
     public int compareByAirportId(FlightWritableComparable firstItem, FlightWritableComparable secondItem) {
         return Integer.compare(firstItem.getAirportId(), secondItem.getAirportId());
     }
@@ -65,8 +49,8 @@ public class FlightWritableComparable implements WritableComparable {
     }
 
     @Override
-    public int compareTo(Object flight) {
-        FlightWritableComparable flight = (FlightWritableComparable) flight;
+    public int compareTo(Object object) {
+        FlightWritableComparable flight = (FlightWritableComparable) object;
         if (airportId > flight.airportId) {
             return 1;
         } else if (airportId != flight.airportId) {
