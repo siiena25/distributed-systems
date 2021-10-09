@@ -65,7 +65,8 @@ public class FlightWritableComparable implements WritableComparable {
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Object flight) {
+        flight = (FlightWritableComparable) flight;
         if (airportId > flight.airportId) {
             return 1;
         } else if (airportId != flight.airportId) {
