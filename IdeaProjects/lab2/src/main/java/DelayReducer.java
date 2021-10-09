@@ -10,7 +10,6 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             FlightWritableComparable key,
             Iterable<Text> values,
             Reducer<FlightWritableComparable, Text, Text, Text>.Context context) throws IOException, InterruptedException {
-        super.reduce(key, values, context);
         Iterator<Text> iterator = values.iterator();
         if (iterator.hasNext()) {
             String airportName = iterator.next().toString();
