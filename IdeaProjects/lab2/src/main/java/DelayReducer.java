@@ -18,14 +18,16 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
         float sum = 0;
         int count = 0;
         while (iterator.hasNext()) {
-            ++count;
             float flightDelay = Float.parseFloat(iterator.next().toString());
             min = Math.min(min, flightDelay);
             max = Math.max(max, flightDelay);
             sum += flightDelay;
+            ++count;
         }
-        context.write(new Text(airportName), new Text("\nMinimum delay time: " + min +
+        context.write(
+                new Text(airportName),
+                new Text("\nMinimum delay time: " + min +
                 "\nMaximum delay time: " + max +
-                ""));
+                "\nAverage: " + sum / count));
     }
 }
