@@ -18,10 +18,12 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
         super.map(key, value, context);
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
-            float delay = 0;
+            float delay;
             try {
                 delay = Float.parseFloat(line[18]);
-            } 
+            } catch (NumberFormatException e) {
+                delay = 0;
+            }
         }
     }
 }
