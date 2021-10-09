@@ -14,7 +14,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
     protected void map(
             LongWritable key,
             Text value,
-            Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
+            Mapper.Context context) throws IOException, InterruptedException {
         super.map(key, value, context);
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
