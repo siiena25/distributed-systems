@@ -20,8 +20,8 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
         if (key.get() > 0) {
             float delay = 0;
             try {
-                delay = 
-            }
+                delay = Float.parseFloat(line[18]);
+            } 
         }
     }
 }
