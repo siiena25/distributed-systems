@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class FlightsMapper extends Mapper<LongWritable, Text, Text, FlightWritableComparable> {
 
     private static final int AIRPORT_ID = 14;
     private static final int AIRPORT_DELAY = 18;
@@ -14,7 +14,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
     protected void map(
             LongWritable key,
             Text value,
-            Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
+            Mapper<LongWritable, Text, Text, FlightWritableComparable>.Context context) throws IOException, InterruptedException {
         super.map(key, value, context);
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
