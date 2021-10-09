@@ -2,6 +2,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, Text> {
     @Override
@@ -10,5 +11,7 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             Iterable<Text> values,
             Reducer<FlightWritableComparable, Text, Text, Text>.Context context) throws IOException, InterruptedException {
         super.reduce(key, values, context);
+        Iterator<Text> iterator = values.iterator();
+        
     }
 }
