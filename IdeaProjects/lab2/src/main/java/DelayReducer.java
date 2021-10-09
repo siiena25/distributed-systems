@@ -18,6 +18,7 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
         int count = 0;
         while (iterator.hasNext()) {
             ++count;
+            float flightDelay = Float.parseFloat(iterator.next().toString());
         }
     }
 }
