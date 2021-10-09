@@ -19,19 +19,7 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     public int getAirportId() {
         return airportId;
     }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setAirportId(int airportId) {
-        this.airportId = airportId;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
+    
     @Override
     public int compareTo(FlightWritableComparable flight) {
         if (airportId > flight.airportId) {
