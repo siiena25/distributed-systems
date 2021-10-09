@@ -5,6 +5,6 @@ public class AirportsPartitioner extends Partitioner<FlightWritableComparable, T
 
     @Override
     public int getPartition(FlightWritableComparable flightWritableComparable, Text text, int partitionsNumber) {
-        return flightWritableComparable.getAirportId() % partitionsNumber;
+        return (flightWritableComparable.getAirportId() & Integer.MAX_VALUE) % partitionsNumber;
     }
 }
