@@ -20,6 +20,7 @@ public class App {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setMapOutputKeyClass(FlightWritableComparable.class);
         job.setGroupingComparatorClass(AirportsGroupingComparatorClass.class);
+        job.setPartitionerClass(AirportsPartitioner.class);
         job.setMapperClass(AirportsMapper.class);
         job.setReducerClass(DelayReducer.class);
         job.setOutputKeyClass(Text.class);
