@@ -4,7 +4,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class FlightWritableComparable implements WritableComparable<FlightWritableComparable> {
+public class FlightWritableComparable implements WritableComparable {
 
     private int airportId;
     private int code;
