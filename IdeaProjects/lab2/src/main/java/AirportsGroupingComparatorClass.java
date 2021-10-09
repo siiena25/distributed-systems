@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class AirportsGroupingComparatorClass {
+import org.apache.hadoop.io.WritableComparator;
+
+public class AirportsGroupingComparatorClass extends WritableComparator {
+    
 }
