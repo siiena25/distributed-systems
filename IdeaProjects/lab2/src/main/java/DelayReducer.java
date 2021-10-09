@@ -12,7 +12,7 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             Reducer<FlightWritableComparable, Text, Text, Text>.Context context) throws IOException, InterruptedException {
         super.reduce(key, values, context);
         Iterator<Text> iterator = values.iterator();
-        Text airportName = iterator.next().toString();
+        String airportName = iterator.next().toString();
         float min = Integer.MAX_VALUE;
         float max = 0;
         float sum = 0;
@@ -24,6 +24,6 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             max = Math.max(max, flightDelay);
             sum += flightDelay;
         }
-        context.write();
+        context.write(new Text(airportName), );
     }
 }
