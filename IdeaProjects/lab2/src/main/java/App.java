@@ -15,8 +15,8 @@ public class App {
         Job job = Job.getInstance();
         job.setJarByClass(App.class);
         job.setJobName("Join");
-        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat);
-        FileOutputFormat.setOutputPath(job, new Path(args[2]));
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportsMapper.class);
+        FileOutputFormat.setOutputPath(job, new Path(args[1]), TextInputFormat.class, FlightsMapper.class);
         job.setMapperClass(AirportsMapper.class);
         job.setReducerClass(DelayReducer.class);
         job.setOutputKeyClass(Text.class);
