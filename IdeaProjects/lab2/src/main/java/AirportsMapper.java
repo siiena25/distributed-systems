@@ -9,7 +9,7 @@ public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable
     @Override
     protected void map(LongWritable key,
                        Text value,
-                       Context context)
+                       Mapper.Context context)
             throws IOException, InterruptedException {
         super.map(key, value, context);
         String[] line = value.toString().split(",");
