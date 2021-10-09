@@ -14,7 +14,7 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
         this.code = code;
     }
 
-    FlightWritableComparable() {}
+    FlightWritableComparable() throws IOException {}
 
     public int getAirportId() {
         return airportId;

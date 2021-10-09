@@ -1,9 +1,11 @@
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
+import java.io.IOException;
+
 public class AirportsGroupingComparatorClass extends WritableComparator {
 
-    public AirportsGroupingComparatorClass() {
+    public AirportsGroupingComparatorClass() throws IOException {
         super(FlightWritableComparable.class, true);
     }
 
