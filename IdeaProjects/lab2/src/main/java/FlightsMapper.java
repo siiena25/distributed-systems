@@ -24,6 +24,9 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
             } catch (NumberFormatException e) {
                 delay = 0;
             }
+            if (delay > 0) {
+                
+            }
         }
     }
 }
