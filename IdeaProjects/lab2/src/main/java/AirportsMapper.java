@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class AirportsMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
 
-    private static int
+    private static int AIRPORT_ID = 
 
     @Override
     protected void map(LongWritable key,
