@@ -1,3 +1,4 @@
+cd ../../../
 mvn package
 hadoop fs -rm -r output
 hadoop fs -copyFromLocal 664600583_T_ONTIME_sample.csv
