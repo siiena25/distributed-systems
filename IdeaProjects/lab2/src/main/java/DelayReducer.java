@@ -28,7 +28,7 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
                     new Text(airportName),
                     new Text("\nMinimum delay time: " + min +
                             "\nMaximum delay time: " + max +
-                            "\nAverage: " + sum / count));
+                            "\nAverage: " + sum / count + "\n"));
         }
     }
 }
