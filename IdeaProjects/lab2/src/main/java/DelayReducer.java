@@ -22,7 +22,7 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
                 min = Math.min(min, flightDelay);
                 max = Math.max(max, flightDelay);
                 sum += flightDelay;
-                ++count;
+                count++;
             }
             context.write(
                     new Text(airportName),
