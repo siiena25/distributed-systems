@@ -16,7 +16,7 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             float min = Float.MAX_VALUE;
             float max = 0.f;
             float sum = 0.f;
-            float count = 0;
+            int count = 0;
             while (iterator.hasNext()) {
                 float flightDelay = Float.parseFloat(String.valueOf(iterator.next()));
                 min = Math.min(min, flightDelay);
