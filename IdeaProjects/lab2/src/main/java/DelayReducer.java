@@ -23,7 +23,6 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
                 max = Math.max(max, flightDelay);
                 sum += flightDelay;
                 count += 1;
-                //context.write(new Text("\nflight delay: "), new Text(flightDelay + " " + min + " " + max + " " + count + " " + sum));
             }
             float average = sum / count;
             context.write(
