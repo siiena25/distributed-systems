@@ -5,11 +5,11 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AirportsMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
+public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
     protected void map(LongWritable key,
                        Text value,
-                       Mapper<LongWritable, Text, FlightWritableComparable, Text>.Context context)
+                       Mapper.Context context)
             throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
