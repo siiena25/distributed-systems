@@ -13,11 +13,11 @@ public class AirportsMapper extends Mapper<LongWritable, Text, FlightWritableCom
             throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
-            String airportId = line[0];
-            String code = line[1].replaceAll("\"", "");
+            String code = line[0].replaceAll("\"", "");
+            String description = line[1].replaceAll("\"", "");
             context.write(
-                    new FlightWritableComparable(Integer.parseInt(airportId), 0),
-                    new Text(code)
+                    new FlightWritableComparable(Integer.parseInt(code), 0),
+                    new Text(description)
             );
         }
     }
