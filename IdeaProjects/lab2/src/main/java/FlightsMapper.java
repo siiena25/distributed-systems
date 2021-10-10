@@ -23,7 +23,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
             } catch (NumberFormatException e) {
                 delay = 0.f;
             }
-            if (delay > 0) {
+            if (delay > 0.f) {
                 int airportId = Integer.parseInt(line[AIRPORT_ID]);
                 context.write(
                         new FlightWritableComparable(airportId, 1),
