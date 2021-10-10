@@ -25,6 +25,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, FlightWritableComp
             }
             if (delay > 0) {
                 int airportId = Integer.parseInt(line[AIRPORT_ID]);
+                System.out.println("\nairport id: " + airportId + "\ndelay: " + delay);
                 context.write(
                         new FlightWritableComparable(airportId, 1),
                         new Text(String.valueOf(delay))
