@@ -14,7 +14,7 @@ public class AirportsMapper extends Mapper<LongWritable, Text, FlightWritableCom
         String[] line = value.toString().split(",");
         if (key.get() > 0) {
             String airportId = line[0];
-            String code = line[1];
+            String code = line[1].replaceAll("\"", "");
             context.write(
                     new FlightWritableComparable(Integer.parseInt(airportId), 0),
                     new Text(code)
