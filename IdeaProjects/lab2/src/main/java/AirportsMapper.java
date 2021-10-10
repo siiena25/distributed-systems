@@ -11,7 +11,7 @@ public class AirportsMapper extends Mapper<LongWritable, Text, FlightWritableCom
                        Text value,
                        Mapper<LongWritable, Text, FlightWritableComparable, Text>.Context context)
             throws IOException, InterruptedException {
-        String[] line = value.toString().split(",[]");
+        String[] line = value.toString().split(",[\"]");
         if (key.get() > 0) {
             String airportId = line[0].replaceAll("\"", "");
             String code = line[1].replaceAll("\"", "");
