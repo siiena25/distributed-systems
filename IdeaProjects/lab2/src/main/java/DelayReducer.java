@@ -14,7 +14,7 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
         if (iterator.hasNext()) {
             String airportName = iterator.next().toString();
             float min = Float.MAX_VALUE;
-            float max = 0;
+            float max = 0.f;
             float sum = 0;
             int count = 0;
             while (iterator.hasNext()) {
