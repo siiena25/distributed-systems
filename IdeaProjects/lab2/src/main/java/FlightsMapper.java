@@ -21,7 +21,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, FlightWritableComp
             try {
                 delay = Float.parseFloat(line[AIRPORT_DELAY]);
             } catch (NumberFormatException e) {
-                delay = 0;
+                delay = 0.f;
             }
             if (delay > 0) {
                 int airportId = Integer.parseInt(line[AIRPORT_ID]);
