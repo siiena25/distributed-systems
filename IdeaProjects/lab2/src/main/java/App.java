@@ -20,7 +20,6 @@ public class App {
         job.setGroupingComparatorClass(AirportsGroupingComparatorClass.class);
         job.setReducerClass(DelayReducer.class);
         job.setPartitionerClass(AirportsPartitioner.class);
-        job.setMapperClass(AirportsMapper.class);
         job.setMapOutputKeyClass(FlightWritableComparable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
