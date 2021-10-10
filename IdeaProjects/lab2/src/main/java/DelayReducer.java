@@ -24,11 +24,12 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
                 sum += flightDelay;
                 count++;
             }
+            float average = sum / count;
             context.write(
                     new Text(airportName),
                     new Text("\nMinimum delay time: " + min +
                             "\nMaximum delay time: " + max +
-                            "\nAverage: " + sum / count + "\n"));
+                            "\nAverage: " + average + "\n"));
         }
     }
 }
