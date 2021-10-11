@@ -26,7 +26,12 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     }
 
     public int compareByAirportId(FlightWritableComparable flight) {
-        return Integer.compare(this.getAirportId(), flight.getAirportId());
+        if (this.airportId == flight.airportId && this.code == flight.code) {
+            return 0;
+        } else {
+            return this.airportId - flight.airportId;
+        }
+        //return Integer.compare(this.getAirportId(), flight.getAirportId());
     }
 
     @Override
