@@ -24,31 +24,26 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     public int compareTo(FlightWritableComparable flight) {
         if (airportId > flight.airportId) {
             return 1;
-        } else if (airportId != flight.airportId) {
+        } else if (airportId < flight.airportId) {
             return -1;
         }
+
         if (code > flight.code) {
             return 1;
-        } else if (code != flight.code) {
+        } else if (code < flight.code) {
             return -1;
         }
+
         return 0;
-        //return Integer.compare(code, flight.code);
     }
 
     public int compareByAirportId(FlightWritableComparable flight) {
         if (airportId > flight.airportId) {
             return 1;
-        } else if (airportId != flight.airportId) {
+        } else if (airportId < flight.airportId) {
             return -1;
         }
         return 0;
-        /*if (this.airportId == flight.airportId && this.code == flight.code) {
-            return 0;
-        } else {
-            return this.airportId - flight.airportId;
-        }*/
-        //return Integer.compare(this.getAirportId(), flight.getAirportId());
     }
 
     @Override
