@@ -28,7 +28,10 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     public int compareByAirportId(FlightWritableComparable flight) {
         if (airportId > flight.airportId) {
             return 1;
+        } else if (airportId < flight.airportId) {
+            return -1;
         }
+        return 0;
         /*if (this.airportId == flight.airportId && this.code == flight.code) {
             return 0;
         } else {
