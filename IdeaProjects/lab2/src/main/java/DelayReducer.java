@@ -11,8 +11,8 @@ public class DelayReducer extends Reducer<FlightWritableComparable, Text, Text, 
             Iterable<Text> values,
             Reducer<FlightWritableComparable, Text, Text, Text>.Context context) throws IOException, InterruptedException {
         Iterator<Text> iterator = values.iterator();
-        String airportName = iterator.next().toString();
         if (iterator.hasNext()) {
+            String airportName = iterator.next().toString();
             float min = Float.MAX_VALUE;
             float max = 0.f;
             float sum = 0.f;
