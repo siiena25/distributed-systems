@@ -22,22 +22,20 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
 
     @Override
     public int compareTo(FlightWritableComparable flight) {
-        if (airportId > flight.airportId) {
-            return 1;
-        } else if (airportId != flight.airportId) {
+        if (airportId == flight.airportId && code == flight.code) {
+            return 0;
+        } else {
             return -1;
         }
-
-        if (airportId > flight.code) {
-            return 1;
-        } else if (airportId != flight.code) {
-            return -1;
-        }
-        return 0;
     }
 
-    public int compareByAirportId(FlightWritableComparable firstItem, FlightWritableComparable secondItem) {
-        return Integer.compare(firstItem.getAirportId(), secondItem.getAirportId());
+    public int compareByAirportId(FlightWritableComparable item) {
+        //return Integer.compare(this.getAirportId(), item.getAirportId());
+        if (this.getAirportId() > item.airportId) {
+            return 1;
+        } else if (this.getAirportId() != item.airportId) {
+            return -1;
+        } else return 0;
     }
 
     @Override
