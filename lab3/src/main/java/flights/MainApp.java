@@ -55,7 +55,7 @@ public class MainApp {
                         flight.getDelay(),
                         flight.getDelay() > ZERO_DELAY ? 1 : 0,
                         flight.isCancelled() ? 1 : 0,
-                        
+                        1
                 )
         )
     }
