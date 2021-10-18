@@ -52,7 +52,8 @@ public class MainApp {
             JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData
     ) {
         reducedFlightsData.map(
-
+                flight ->
+                        
         );
     }
 
