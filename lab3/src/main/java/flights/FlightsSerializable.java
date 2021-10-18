@@ -50,4 +50,6 @@ public class FlightsSerializable implements Serializable {
     public void setNumberOfFlights(int numberOfFlights) {
         this.numberOfFlights = numberOfFlights;
     }
+
+    public static 
 }
