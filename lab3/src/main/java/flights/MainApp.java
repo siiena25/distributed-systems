@@ -7,5 +7,12 @@ public class MainApp {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
+
+        if (args.length != 3) {
+            System.err.println("Usage: App <flights> <airports> <output>");
+            System.exit(-1);
+        }
+
+        
     }
 }
