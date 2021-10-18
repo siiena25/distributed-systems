@@ -1,6 +1,7 @@
 package flights;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
@@ -37,7 +38,7 @@ public class MainApp {
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
 
-        Map<Integer, String> flightsDataMap = flightsFile.mapToPair(MainApp::getFlightPairs).collectAsMap();
+        JavaPairRDD<Integer, String> flightsData = flightsFile.mapToPair(MainApp::getFlightPairs).collectAsMap();
         Map<Integer, String> airportsDataMap = airportsFile.mapToPair(MainApp::getAirportPairs).collectAsMap();
 
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
@@ -52,7 +53,7 @@ public class MainApp {
         boolean isCancelled = columnsOfFlightsTable[COLUMN_NUMBER_OF_IS_CANCELLED_ID].isEmpty();
 
         return new Tuple2<>(
-                new Tuple2<>(originAirportId, destAirportId), 
+                new Tuple2<>(originAirportId, destAirportId),
                 new AirportSerializable(originAirportId, destAirportId, delay, isCancelled)
         );
     }
