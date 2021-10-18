@@ -27,7 +27,7 @@ public class MainApp {
     }
 
     private static JavaRDD<String> removeQuotes(JavaRDD<String> textFile) {
-        textFile.map(
+        return textFile.map(
                 line -> line.replaceAll(QUOTES, EMPTY_STRING)
         );
     }
