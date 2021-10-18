@@ -44,7 +44,7 @@ public class MainApp {
 
     private static Tuple2<Integer, String> getFlightPairs(String line) {
         String[] columnsOfFlightsTable = line.split(COMMA);
-        
+        int originAirportId = 
     }
 
     private static Tuple2<Integer, String> getAirportPairs(String line) {
