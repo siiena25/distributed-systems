@@ -60,5 +60,7 @@ public class FlightsSerializable implements Serializable {
         );
     }
 
-    public static FlightsSerializable add(FlightsSerializable flight, )
+    public static FlightsSerializable add(FlightsSerializable flight, AirportSerializable airport) {
+        
+    }
 }
