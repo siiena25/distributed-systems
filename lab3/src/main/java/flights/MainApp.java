@@ -68,9 +68,13 @@ public class MainApp {
                     String output = "\nOriginAirport: " + originAirport +
                             "\nDestAirport: " + destAirport +
                             "\nMax time of delay: " + maxTimeOfDelay +
-                            "\nPercentage of late and canceled flights: " + getPercentageOfFlights()
+                            "\nPercentage of late and canceled flights: " + getPercentageOfFlights(delayFlights + cancelledFlights, numberOfFlights);
                 }
         );
+    }
+
+    private static String getPercentageOfFlights(float v, int numberOfFlights) {
+        return 
     }
 
     private static JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reduceFlights(
