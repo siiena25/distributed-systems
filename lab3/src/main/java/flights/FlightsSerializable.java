@@ -61,8 +61,8 @@ public class FlightsSerializable implements Serializable {
     }
 
     public static FlightsSerializable add(FlightsSerializable flight, AirportSerializable airport) {
-        boolean isDelayed = if (airport.getDelay() > 0.f) {
-            
+        boolean isDelayed = if (airport.getDelay() > 0.f || ) {
+
         }
         return new FlightsSerializable(
                 Math.max(flight.getMaxTimeOfDelay(), airport.getDelay()),
