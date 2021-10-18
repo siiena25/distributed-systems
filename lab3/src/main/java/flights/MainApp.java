@@ -23,5 +23,7 @@ public class MainApp {
     }
 
     private static JavaRDD<String> removeQuotes(JavaRDD<String> textFile) {
+        textFile.map(line ->
+                )
     }
 }
