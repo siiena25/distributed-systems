@@ -50,7 +50,7 @@ public class MainApp {
     private static JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reduceFlights(
             JavaPairRDD<Tuple2<Integer, Integer>, AirportSerializable> flightsData
     ) {
-        
+        return flightsData.combineByKey()
     }
 
     private static Tuple2<Tuple2<Integer, Integer>, AirportSerializable> getFlightPairs(String line) {
