@@ -25,13 +25,13 @@ public class MainApp {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        if (args.length != 3) {
+        /*if (args.length != 3) {
             System.err.println("Usage: MainApp <flights> <airports> <output>");
             System.exit(-1);
-        }
+        }*/
 
-        String flights = args[0];
-        String airports = args[1];
+        String flights = "664600583_T_ONTIME_sample.csv";
+        String airports = "L_AIRPORT_ID.csv";
 
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
