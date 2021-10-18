@@ -1,5 +1,5 @@
-package flights;
-
+import flights.AirportSerializable;
+import flights.FlightsSerializable;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
