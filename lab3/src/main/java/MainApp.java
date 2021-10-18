@@ -10,7 +10,6 @@ import scala.Tuple2;
 import java.util.Map;
 
 public class MainApp {
-
     private final static String QUOTES = "\"";
     private final static String EMPTY_STRING = "";
     private final static String COMMA = ",";
