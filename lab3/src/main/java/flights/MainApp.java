@@ -5,10 +5,8 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
-import scala.Int;
 import scala.Tuple2;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 public class MainApp {
@@ -45,11 +43,10 @@ public class MainApp {
         JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData = reduceFlights(flightsData);
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
         
-        JavaRDD<String> mappedFlights = mapFlights(reducedFlightsData, airportsBroadcasted);
-        
+        mapFlights(reducedFlightsData, airportsBroadcasted);
     }
 
-    private static JavaRDD<String> mapFlights(
+    private static void mapFlights(
             JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData,
             final Broadcast<Map<Integer, String>> airportsBroadcasted
     ) {
@@ -65,10 +62,11 @@ public class MainApp {
                     String originAirport = airportId.get(key._1);
                     String destAirport = airportId.get(key._2);
 
-                    String output = "\nOriginAirport: " + originAirport +
+                    return "\nOriginAirport: " + originAirport +
                             "\nDestAirport: " + destAirport +
                             "\nMax time of delay: " + maxTimeOfDelay +
-                            "\nPercentage of late and canceled flights: " + getPercentageOfFlights(delayFlights + cancelledFlights, numberOfFlights);
+                            "\nPercentage of late and canceled flights: " + getPercentageOfFlights(
+                                    delayFlights + cancelledFlights, numberOfFlights);
                 }
         );
     }
