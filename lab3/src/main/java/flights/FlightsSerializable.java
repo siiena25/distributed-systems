@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class FlightsSerializable implements Serializable {
 
     private float maxTimeOfDelay;
-    private int delayFlights;
-    private int cancelledFlights;
+    private float delayFlights;
+    private float cancelledFlights;
     private int numberOfFlights;
 
     public FlightsSerializable() {
@@ -63,7 +63,7 @@ public class FlightsSerializable implements Serializable {
     public static FlightsSerializable add(FlightsSerializable flight, AirportSerializable airport) {
         boolean isDelayed = airport.getDelay() > 0.f || airport.isCancelled();
         float delayFlight = Math.max(flight.getMaxTimeOfDelay(), airport.getDelay());
-        boolean isDelayedFlight = isDelayed ? flight.getDelayFlights() + 1 : flight.getDelayFlights();
+        float isDelayedFlight = isDelayed ? flight.getDelayFlights() + 1 : flight.getDelayFlights();
         
         return new FlightsSerializable(
                 delay,
