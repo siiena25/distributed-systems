@@ -4,6 +4,8 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
+import java.util.Map;
+
 public class MainApp {
 
     private final static String QUOTES = "\"";
@@ -23,6 +25,8 @@ public class MainApp {
 
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
+
+        Map<Integer, String> airportsDataMap = 
         
     }
 
