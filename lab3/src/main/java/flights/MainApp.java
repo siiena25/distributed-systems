@@ -20,6 +20,8 @@ public class MainApp {
     private final static int COLUMN_NUMBER_OF_DELAY_ID = 18;
     private final static int COLUMN_NUMBER_OF_IS_CANCELLED_ID = 19;
 
+    private static final float ZERO_DELAY = 0.f;
+
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -47,14 +49,14 @@ public class MainApp {
         int originAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_ORIGIN_AIRPORT_ID]);
         int destAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_DEST_AIRPORT_ID]);
         float delay = saveGetDelay(columnsOfFlightsTable[COLUMN_NUMBER_OF_DELAY_ID]);
+        
     }
 
     private static float saveGetDelay(String line) {
-        float delay;
         try {
-            return delay = Float.parseFloat(line);
+            return Float.parseFloat(line);
         } catch (NumberFormatException e) {
-            return delay = 0.f;
+            return ZERO_DELAY;
         }
     }
 
