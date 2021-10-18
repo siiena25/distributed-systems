@@ -51,5 +51,5 @@ public class FlightsSerializable implements Serializable {
         this.numberOfFlights = numberOfFlights;
     }
 
-    public static 
+    public static FlightsSerializable plus()
 }
