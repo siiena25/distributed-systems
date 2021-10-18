@@ -17,6 +17,7 @@ public class MainApp {
     private final static int COLUMN_NUMBER_OF_ORIGIN_AIRPORT_ID = 11;
     private final static int COLUMN_NUMBER_OF_DEST_AIRPORT_ID = 14;
     private final static int COLUMN_NUMBER_OF_DELAY_ID = 18;
+    private final static int COLUMN_NUMBER_OF_IS_CANCELLED_ID = 18;
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
