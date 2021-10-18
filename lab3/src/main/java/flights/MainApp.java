@@ -49,7 +49,7 @@ public class MainApp {
         int originAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_ORIGIN_AIRPORT_ID]);
         int destAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_DEST_AIRPORT_ID]);
         float delay = saveGetDelay(columnsOfFlightsTable[COLUMN_NUMBER_OF_DELAY_ID]);
-        boolean isCancelledID = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_IS_CANCELLED_ID]);
+        boolean isCancelled = columnsOfFlightsTable[COLUMN_NUMBER_OF_IS_CANCELLED_ID].isEmpty();
     }
 
     private static float saveGetDelay(String line) {
