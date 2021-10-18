@@ -22,7 +22,7 @@ public class MainApp {
         String airports = args[1];
 
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
-        JavaRDD<String> airportsFile = sc.textFile(airports);
+        JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
         
     }
 
