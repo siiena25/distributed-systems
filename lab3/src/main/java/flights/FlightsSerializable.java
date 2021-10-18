@@ -52,6 +52,13 @@ public class FlightsSerializable implements Serializable {
     }
 
     public static FlightsSerializable plus(FlightsSerializable firstFlight, FlightsSerializable secondFlight) {
-        return 
+        return new FlightsSerializable(
+                firstFlight.getMaxTimeOfDelay() + secondFlight.getMaxTimeOfDelay(),
+                firstFlight.getDelayFlights() + secondFlight.getDelayFlights(),
+                firstFlight.getCancelledFlights() + secondFlight.getCancelledFlights(),
+                firstFlight.getNumberOfFlights() + secondFlight.getNumberOfFlights()
+        );
     }
+
+    public static FlightsSerializable add(FlightsSerializable flight, )
 }
