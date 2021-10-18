@@ -44,15 +44,17 @@ public class MainApp {
         JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData = reduceFlights(flightsData);
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
         
-        JavaRDD<String> mappedFlights = mapFlights(reducedFlightsData);
+        JavaRDD<String> mappedFlights = mapFlights(reducedFlightsData, airportsBroadcasted);
         
     }
 
     private static JavaRDD<String> mapFlights(
-            JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData
+            JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData,
+            final Broadcast<Map<Integer, String>> airportsBroadcasted
     ) {
         reducedFlightsData.map(
                 flight -> {
+                    Map<Integer, String> airportId = airportsBroadcasted.value();
                     
                 }
         );
