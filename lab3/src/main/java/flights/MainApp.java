@@ -33,7 +33,7 @@ public class MainApp {
         String flights = "664600583_T_ONTIME_sample.csv";
         String airports = "L_AIRPORT_ID.csv";
 
-        JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
+        JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights).filter(line -> !line.contains("Code")));
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
 
         JavaPairRDD<Tuple2<Integer, Integer>, AirportSerializable> flightsData = flightsFile.mapToPair(MainApp::getFlightPairs);
