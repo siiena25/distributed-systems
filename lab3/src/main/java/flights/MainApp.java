@@ -48,7 +48,12 @@ public class MainApp {
         
     }
 
-    private static JavaRDD<String> mapFlights(JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData) {
+    private static JavaRDD<String> mapFlights(
+            JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData
+    ) {
+        reducedFlightsData.map(
+
+        );
     }
 
     private static JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reduceFlights(
