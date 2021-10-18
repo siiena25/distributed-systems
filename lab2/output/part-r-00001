@@ -1,0 +1,800 @@
+
+Airport: Allentown/Bethlehem/Easton, PA: Lehigh Valley International	
+Minimum delay time: 11.0
+Maximum delay time: 23.0
+Average: 15.4
+
+Airport: Aberdeen, SD: Aberdeen Regional	
+Minimum delay time: 4.0
+Maximum delay time: 22.0
+Average: 13.0
+
+Airport: Waco, TX: Waco Regional	
+Minimum delay time: 4.0
+Maximum delay time: 74.0
+Average: 26.222221
+
+Airport: Arcata/Eureka, CA: Arcata	
+Minimum delay time: 11.0
+Maximum delay time: 96.0
+Average: 64.666664
+
+Airport: Alexandria, LA: Alexandria International	
+Minimum delay time: 1.0
+Maximum delay time: 55.0
+Average: 15.625
+
+Airport: Albany, NY: Albany International	
+Minimum delay time: 1.0
+Maximum delay time: 241.0
+Average: 32.92857
+
+Airport: Amarillo, TX: Rick Husband Amarillo International	
+Minimum delay time: 1.0
+Maximum delay time: 95.0
+Average: 32.31818
+
+Airport: Anchorage, AK: Ted Stevens Anchorage International	
+Minimum delay time: 1.0
+Maximum delay time: 375.0
+Average: 39.580647
+
+Airport: Atlanta, GA: Hartsfield-Jackson Atlanta International	
+Minimum delay time: 1.0
+Maximum delay time: 653.0
+Average: 33.39887
+
+Airport: Austin, TX: Austin - Bergstrom International	
+Minimum delay time: 1.0
+Maximum delay time: 340.0
+Average: 29.623377
+
+Airport: Asheville, NC: Asheville Regional	
+Minimum delay time: 1.0
+Maximum delay time: 152.0
+Average: 40.333332
+
+Airport: Kalamazoo, MI: Kalamazoo/Battle Creek International	
+Minimum delay time: 1.0
+Maximum delay time: 122.0
+Average: 54.625
+
+Airport: Hartford, CT: Bradley International	
+Minimum delay time: 1.0
+Maximum delay time: 293.0
+Average: 32.933334
+
+Airport: Bethel, AK: Bethel Airport	
+Minimum delay time: 9.0
+Maximum delay time: 9.0
+Average: 9.0
+
+Airport: Bakersfield, CA: Meadows Field	
+Minimum delay time: 3.0
+Maximum delay time: 141.0
+Average: 43.923077
+
+Airport: Birmingham, AL: Birmingham-Shuttlesworth International	
+Minimum delay time: 1.0
+Maximum delay time: 154.0
+Average: 30.818182
+
+Airport: Bismarck/Mandan, ND: Bismarck Municipal	
+Minimum delay time: 2.0
+Maximum delay time: 272.0
+Average: 44.4
+
+Airport: Bemidji, MN: Bemidji Regional	
+Minimum delay time: 2.0
+Maximum delay time: 4.0
+Average: 3.0
+
+Airport: Bloomington/Normal, IL: Central Illinois Regional	
+Minimum delay time: 3.0
+Maximum delay time: 241.0
+Average: 51.833332
+
+Airport: Nashville, TN: Nashville International	
+Minimum delay time: 1.0
+Maximum delay time: 391.0
+Average: 31.838926
+
+Airport: Boise, ID: Boise Air Terminal	
+Minimum delay time: 1.0
+Maximum delay time: 122.0
+Average: 27.87931
+
+Airport: Boston, MA: Logan International	
+Minimum delay time: 1.0
+Maximum delay time: 292.0
+Average: 34.471264
+
+Airport: Brunswick, GA: Brunswick Golden Isles	
+Minimum delay time: 1.0
+Maximum delay time: 187.0
+Average: 94.0
+
+Airport: Brainerd, MN: Brainerd Lakes Regional	
+Minimum delay time: 6.0
+Maximum delay time: 6.0
+Average: 6.0
+
+Airport: Brownsville, TX: Brownsville South Padre Island International	
+Minimum delay time: 6.0
+Maximum delay time: 51.0
+Average: 22.5
+
+Airport: Butte, MT: Bert Mooney	
+Minimum delay time: 9.0
+Maximum delay time: 12.0
+Average: 10.5
+
+Airport: Baton Rouge, LA: Baton Rouge Metropolitan/Ryan Field	
+Minimum delay time: 1.0
+Maximum delay time: 200.0
+Average: 41.64
+
+Airport: Burlington, VT: Burlington International	
+Minimum delay time: 2.0
+Maximum delay time: 144.0
+Average: 55.555557
+
+Airport: Baltimore, MD: Baltimore/Washington International Thurgood Marshall	
+Minimum delay time: 1.0
+Maximum delay time: 475.0
+Average: 30.637037
+
+Airport: Bozeman, MT: Bozeman Yellowstone International	
+Minimum delay time: 1.0
+Maximum delay time: 214.0
+Average: 53.727272
+
+Airport: Cedar Rapids/Iowa City, IA: The Eastern Iowa	
+Minimum delay time: 3.0
+Maximum delay time: 206.0
+Average: 44.88889
+
+Airport: Sault Ste. Marie, MI: Chippewa County International	
+Minimum delay time: 3.0
+Maximum delay time: 123.0
+Average: 45.666668
+
+Airport: Carlsbad, CA: McClellan-Palomar	
+Minimum delay time: 1.0
+Maximum delay time: 24.0
+Average: 12.0
+
+Airport: College Station/Bryan, TX: Easterwood Field	
+Minimum delay time: 1.0
+Maximum delay time: 40.0
+Average: 16.363636
+
+Airport: Charlotte, NC: Charlotte Douglas International	
+Minimum delay time: 1.0
+Maximum delay time: 263.0
+Average: 25.70914
+
+Airport: Champaign/Urbana, IL: University of Illinois/Willard	
+Minimum delay time: 1.0
+Maximum delay time: 129.0
+Average: 41.0
+
+Airport: Cody, WY: Yellowstone Regional	
+Minimum delay time: 1.0
+Maximum delay time: 25.0
+Average: 9.333333
+
+Airport: Colorado Springs, CO: City of Colorado Springs Municipal	
+Minimum delay time: 3.0
+Maximum delay time: 224.0
+Average: 45.05263
+
+Airport: Columbia, MO: Columbia Regional	
+Minimum delay time: 3.0
+Maximum delay time: 380.0
+Average: 117.5
+
+Airport: Cincinnati, OH: Cincinnati/Northern Kentucky International	
+Minimum delay time: 1.0
+Maximum delay time: 179.0
+Average: 32.06173
+
+Airport: Mosinee, WI: Central Wisconsin	
+Minimum delay time: 2.0
+Maximum delay time: 150.0
+Average: 50.166668
+
+Airport: Dallas, TX: Dallas Love Field	
+Minimum delay time: 1.0
+Maximum delay time: 278.0
+Average: 27.5291
+
+Airport: Dayton, OH: James M Cox/Dayton International	
+Minimum delay time: 2.0
+Maximum delay time: 218.0
+Average: 29.448277
+
+Airport: Dickinson, ND: Dickinson - Theodore Roosevelt Regional	
+Minimum delay time: 5.0
+Maximum delay time: 175.0
+Average: 55.25
+
+Airport: Duluth, MN: Duluth International	
+Minimum delay time: 2.0
+Maximum delay time: 177.0
+Average: 69.0
+
+Airport: Durango, CO: Durango La Plata County	
+Minimum delay time: 4.0
+Maximum delay time: 122.0
+Average: 34.285713
+
+Airport: Des Moines, IA: Des Moines International	
+Minimum delay time: 1.0
+Maximum delay time: 167.0
+Average: 34.45238
+
+Airport: Detroit, MI: Detroit Metro Wayne County	
+Minimum delay time: 1.0
+Maximum delay time: 514.0
+Average: 34.87156
+
+Airport: Devils Lake, ND: Devils Lake Regional	
+Minimum delay time: 13.0
+Maximum delay time: 114.0
+Average: 63.5
+
+Airport: Eau Claire, WI: Chippewa Valley Regional	
+Minimum delay time: 3.0
+Maximum delay time: 264.0
+Average: 110.75
+
+Airport: Panama City, FL: Northwest Florida Beaches International	
+Minimum delay time: 2.0
+Maximum delay time: 31.0
+Average: 12.25
+
+Airport: Eagle, CO: Eagle County Regional	
+Minimum delay time: 1.0
+Maximum delay time: 124.0
+Average: 42.666668
+
+Airport: Elko, NV: Elko Regional	
+Minimum delay time: 10.0
+Maximum delay time: 59.0
+Average: 26.666666
+
+Airport: Elmira/Corning, NY: Elmira/Corning Regional	
+Minimum delay time: 1.0
+Maximum delay time: 64.0
+Average: 31.777779
+
+Airport: Erie, PA: Erie International/Tom Ridge Field	
+Minimum delay time: 3.0
+Maximum delay time: 70.0
+Average: 23.2
+
+Airport: Escanaba, MI: Delta County	
+Minimum delay time: 35.0
+Maximum delay time: 245.0
+Average: 140.0
+
+Airport: Eugene, OR: Mahlon Sweet Field	
+Minimum delay time: 3.0
+Maximum delay time: 94.0
+Average: 24.736841
+
+Airport: Fargo, ND: Hector International	
+Minimum delay time: 1.0
+Maximum delay time: 127.0
+Average: 28.481482
+
+Airport: Fayetteville, NC: Fayetteville Regional/Grannis Field	
+Minimum delay time: 4.0
+Maximum delay time: 41.0
+Average: 16.0
+
+Airport: Flagstaff, AZ: Flagstaff Pulliam	
+Minimum delay time: 3.0
+Maximum delay time: 112.0
+Average: 47.0
+
+Airport: Fort Lauderdale, FL: Fort Lauderdale-Hollywood International	
+Minimum delay time: 1.0
+Maximum delay time: 269.0
+Average: 32.903225
+
+Airport: Flint, MI: Bishop International	
+Minimum delay time: 1.0
+Maximum delay time: 171.0
+Average: 46.142857
+
+Airport: Sioux Falls, SD: Joe Foss Field	
+Minimum delay time: 1.0
+Maximum delay time: 165.0
+Average: 42.28125
+
+Airport: Fort Wayne, IN: Fort Wayne International	
+Minimum delay time: 7.0
+Maximum delay time: 129.0
+Average: 38.454544
+
+Airport: Gillette, WY: Gillette Campbell County	
+Minimum delay time: 8.0
+Maximum delay time: 56.0
+Average: 30.2
+
+Airport: Garden City, KS: Garden City Regional	
+Minimum delay time: 22.0
+Maximum delay time: 22.0
+Average: 22.0
+
+Airport: Longview, TX: East Texas Regional	
+Minimum delay time: 12.0
+Maximum delay time: 92.0
+Average: 48.666668
+
+Airport: Grand Junction, CO: Grand Junction Regional	
+Minimum delay time: 1.0
+Maximum delay time: 39.0
+Average: 12.75
+
+Airport: Gainesville, FL: Gainesville Regional	
+Minimum delay time: 2.0
+Maximum delay time: 86.0
+Average: 16.3
+
+Airport: Gulfport/Biloxi, MS: Gulfport-Biloxi International	
+Minimum delay time: 2.0
+Maximum delay time: 113.0
+Average: 33.416668
+
+Airport: Green Bay, WI: Austin Straubel International	
+Minimum delay time: 1.0
+Maximum delay time: 113.0
+Average: 25.695652
+
+Airport: Greensboro/High Point, NC: Piedmont Triad International	
+Minimum delay time: 1.0
+Maximum delay time: 307.0
+Average: 35.29032
+
+Airport: Great Falls, MT: Great Falls International	
+Minimum delay time: 1.0
+Maximum delay time: 89.0
+Average: 25.5
+
+Airport: Columbus, MS: Golden Triangle Regional	
+Minimum delay time: 11.0
+Maximum delay time: 42.0
+Average: 26.5
+
+Airport: Hibbing, MN: Range Regional	
+Minimum delay time: 1.0
+Maximum delay time: 51.0
+Average: 22.25
+
+Airport: Honolulu, HI: Honolulu International	
+Minimum delay time: 1.0
+Maximum delay time: 1013.0
+Average: 25.0
+
+Airport: Hobbs, NM: Lea County Regional	
+Minimum delay time: 2.0
+Maximum delay time: 73.0
+Average: 26.666666
+
+Airport: Houston, TX: William P Hobby	
+Minimum delay time: 1.0
+Maximum delay time: 171.0
+Average: 25.875
+
+Airport: White Plains, NY: Westchester County	
+Minimum delay time: 1.0
+Maximum delay time: 233.0
+Average: 40.892857
+
+Airport: Huntsville, AL: Huntsville International-Carl T Jones Field	
+Minimum delay time: 1.0
+Maximum delay time: 159.0
+Average: 46.45
+
+Airport: Hays, KS: Hays Regional	
+Minimum delay time: 13.0
+Maximum delay time: 15.0
+Average: 14.0
+
+Airport: Niagara Falls, NY: Niagara Falls International	
+Minimum delay time: 26.0
+Maximum delay time: 38.0
+Average: 32.0
+
+Airport: Wilmington, NC: Wilmington International	
+Minimum delay time: 95.0
+Maximum delay time: 95.0
+Average: 95.0
+
+Airport: Iron Mountain/Kingsfd, MI: Ford	
+Minimum delay time: 69.0
+Maximum delay time: 114.0
+Average: 91.5
+
+Airport: Indianapolis, IN: Indianapolis International	
+Minimum delay time: 1.0
+Maximum delay time: 262.0
+Average: 30.113401
+
+Airport: International Falls, MN: Falls International Einarson Field	
+Minimum delay time: 33.0
+Maximum delay time: 33.0
+Average: 33.0
+
+Airport: Williston, ND: Sloulin Field International	
+Minimum delay time: 2.0
+Maximum delay time: 89.0
+Average: 30.0
+
+Airport: Islip, NY: Long Island MacArthur	
+Minimum delay time: 1.0
+Maximum delay time: 240.0
+Average: 42.07143
+
+Airport: Jackson, WY: Jackson Hole	
+Minimum delay time: 1.0
+Maximum delay time: 320.0
+Average: 39.347828
+
+Airport: Jacksonville, FL: Jacksonville International	
+Minimum delay time: 1.0
+Maximum delay time: 142.0
+Average: 31.73585
+
+Airport: Joplin, MO: Joplin Regional	
+Minimum delay time: 12.0
+Maximum delay time: 47.0
+Average: 30.333334
+
+Airport: Jamestown, ND: Jamestown Regional	
+Minimum delay time: 5.0
+Maximum delay time: 104.0
+Average: 55.0
+
+Airport: Juneau, AK: Juneau International	
+Minimum delay time: 1.0
+Maximum delay time: 51.0
+Average: 12.6
+
+Airport: Ketchikan, AK: Ketchikan International	
+Minimum delay time: 4.0
+Maximum delay time: 43.0
+Average: 18.1
+
+Airport: Las Vegas, NV: McCarran International	
+Minimum delay time: 1.0
+Maximum delay time: 251.0
+Average: 29.983425
+
+Airport: Lawton/Fort Sill, OK: Lawton-Fort Sill Regional	
+Minimum delay time: 10.0
+Maximum delay time: 45.0
+Average: 28.2
+
+Airport: Lake Charles, LA: Lake Charles Regional	
+Minimum delay time: 7.0
+Maximum delay time: 43.0
+Average: 18.0
+
+Airport: Lexington, KY: Blue Grass	
+Minimum delay time: 1.0
+Maximum delay time: 136.0
+Average: 28.791666
+
+Airport: Lafayette, LA: Lafayette Regional Paul Fournet Field	
+Minimum delay time: 1.0
+Maximum delay time: 92.0
+Average: 25.142857
+
+Airport: New York, NY: LaGuardia	
+Minimum delay time: 1.0
+Maximum delay time: 331.0
+Average: 39.109787
+
+Airport: Lincoln, NE: Lincoln Airport	
+Minimum delay time: 1.0
+Maximum delay time: 123.0
+Average: 37.0
+
+Airport: Laredo, TX: Laredo International	
+Minimum delay time: 2.0
+Maximum delay time: 172.0
+Average: 33.7
+
+Airport: Meridian, MS: Key Field	
+Minimum delay time: 11.0
+Maximum delay time: 246.0
+Average: 89.666664
+
+Airport: Montgomery, AL: Montgomery Regional	
+Minimum delay time: 3.0
+Maximum delay time: 60.0
+Average: 27.666666
+
+Airport: Miami, FL: Miami International	
+Minimum delay time: 1.0
+Maximum delay time: 237.0
+Average: 30.81362
+
+Airport: Moline, IL: Quad City International	
+Minimum delay time: 1.0
+Maximum delay time: 205.0
+Average: 46.75
+
+Airport: Monroe, LA: Monroe Regional	
+Minimum delay time: 7.0
+Maximum delay time: 161.0
+Average: 54.363636
+
+Airport: Minot, ND: Minot International	
+Minimum delay time: 2.0
+Maximum delay time: 61.0
+Average: 21.428572
+
+Airport: Marquette, MI: Sawyer International	
+Minimum delay time: 175.0
+Maximum delay time: 175.0
+Average: 175.0
+
+Airport: Madison, WI: Dane County Regional-Truax Field	
+Minimum delay time: 2.0
+Maximum delay time: 251.0
+Average: 47.1875
+
+Airport: Minneapolis, MN: Minneapolis-St Paul International	
+Minimum delay time: 1.0
+Maximum delay time: 371.0
+Average: 29.308176
+
+Airport: New Orleans, LA: Louis Armstrong New Orleans International	
+Minimum delay time: 1.0
+Maximum delay time: 199.0
+Average: 27.72072
+
+Airport: Myrtle Beach, SC: Myrtle Beach International	
+Minimum delay time: 6.0
+Maximum delay time: 104.0
+Average: 36.11111
+
+Airport: Jacksonville/Camp Lejeune, NC: Albert J Ellis	
+Minimum delay time: 2.0
+Maximum delay time: 33.0
+Average: 12.2
+
+Airport: Oklahoma City, OK: Will Rogers World	
+Minimum delay time: 1.0
+Maximum delay time: 150.0
+Average: 34.491524
+
+Airport: Omaha, NE: Eppley Airfield	
+Minimum delay time: 1.0
+Maximum delay time: 140.0
+Average: 27.482143
+
+Airport: Nome, AK: Nome Airport	
+Minimum delay time: 8.0
+Maximum delay time: 14.0
+Average: 11.0
+
+Airport: Ontario, CA: Ontario International	
+Minimum delay time: 1.0
+Maximum delay time: 97.0
+Average: 22.783333
+
+Airport: Norfolk, VA: Norfolk International	
+Minimum delay time: 1.0
+Maximum delay time: 166.0
+Average: 29.5
+
+Airport: Plattsburgh, NY: Plattsburgh International	
+Minimum delay time: 9.0
+Maximum delay time: 32.0
+Average: 18.0
+
+Airport: West Palm Beach/Palm Beach, FL: Palm Beach International	
+Minimum delay time: 1.0
+Maximum delay time: 141.0
+Average: 31.366667
+
+Airport: Portland, OR: Portland International	
+Minimum delay time: 1.0
+Maximum delay time: 185.0
+Average: 27.457144
+
+Airport: Phoenix, AZ: Phoenix Sky Harbor International	
+Minimum delay time: 1.0
+Maximum delay time: 498.0
+Average: 30.24569
+
+Airport: Hattiesburg/Laurel, MS: Hattiesburg-Laurel Regional	
+Minimum delay time: 14.0
+Maximum delay time: 14.0
+Average: 14.0
+
+Airport: Pocatello, ID: Pocatello Regional	
+Minimum delay time: 2.0
+Maximum delay time: 5.0
+Average: 3.3333333
+
+Airport: Pensacola, FL: Pensacola International	
+Minimum delay time: 1.0
+Maximum delay time: 176.0
+Average: 25.571428
+
+Airport: Providence, RI: Theodore Francis Green State	
+Minimum delay time: 1.0
+Maximum delay time: 95.0
+Average: 24.60465
+
+Airport: Portland, ME: Portland International Jetport	
+Minimum delay time: 1.0
+Maximum delay time: 97.0
+Average: 25.777779
+
+Airport: Rapid City, SD: Rapid City Regional	
+Minimum delay time: 2.0
+Maximum delay time: 108.0
+Average: 36.142857
+
+Airport: Redding, CA: Redding Municipal	
+Minimum delay time: 3.0
+Maximum delay time: 134.0
+Average: 47.5
+
+Airport: Bend/Redmond, OR: Roberts Field	
+Minimum delay time: 2.0
+Maximum delay time: 131.0
+Average: 35.6
+
+Airport: Rock Springs, WY: Rock Springs Sweetwater County	
+Minimum delay time: 4.0
+Maximum delay time: 138.0
+Average: 51.333332
+
+Airport: Rochester, MN: Rochester International	
+Minimum delay time: 1.0
+Maximum delay time: 179.0
+Average: 38.1
+
+Airport: Fort Myers, FL: Southwest Florida International	
+Minimum delay time: 1.0
+Maximum delay time: 484.0
+Average: 38.02041
+
+Airport: San Diego, CA: San Diego International	
+Minimum delay time: 1.0
+Maximum delay time: 267.0
+Average: 21.138393
+
+Airport: San Antonio, TX: San Antonio International	
+Minimum delay time: 1.0
+Maximum delay time: 391.0
+Average: 33.533897
+
+Airport: Savannah, GA: Savannah/Hilton Head International	
+Minimum delay time: 3.0
+Maximum delay time: 201.0
+Average: 32.285713
+
+Airport: Santa Barbara, CA: Santa Barbara Municipal	
+Minimum delay time: 1.0
+Maximum delay time: 152.0
+Average: 33.11111
+
+Airport: Deadhorse, AK: Deadhorse Airport	
+Minimum delay time: 3.0
+Maximum delay time: 12.0
+Average: 8.666667
+
+Airport: State College, PA: University Park	
+Minimum delay time: 3.0
+Maximum delay time: 33.0
+Average: 17.25
+
+Airport: Seattle, WA: Seattle/Tacoma International	
+Minimum delay time: 1.0
+Maximum delay time: 531.0
+Average: 32.295383
+
+Airport: San Francisco, CA: San Francisco International	
+Minimum delay time: 1.0
+Maximum delay time: 556.0
+Average: 44.224823
+
+Airport: Springfield, MO: Springfield-Branson National	
+Minimum delay time: 3.0
+Maximum delay time: 223.0
+Average: 54.590908
+
+Airport: San Jose, CA: Norman Y. Mineta San Jose International	
+Minimum delay time: 1.0
+Maximum delay time: 206.0
+Average: 27.421875
+
+Airport: San Juan, PR: Luis Munoz Marin International	
+Minimum delay time: 1.0
+Maximum delay time: 209.0
+Average: 32.086956
+
+Airport: Salt Lake City, UT: Salt Lake City International	
+Minimum delay time: 1.0
+Maximum delay time: 475.0
+Average: 27.509804
+
+Airport: Sacramento, CA: Sacramento International	
+Minimum delay time: 1.0
+Maximum delay time: 135.0
+Average: 26.52459
+
+Airport: Santa Maria, CA: Santa Maria Public/Capt. G. Allan Hancock Field	
+Minimum delay time: 22.0
+Maximum delay time: 22.0
+Average: 22.0
+
+Airport: Christiansted, VI: Henry E. Rohlsen	
+Minimum delay time: 4.0
+Maximum delay time: 12.0
+Average: 8.0
+
+Airport: Sun Valley/Hailey/Ketchum, ID: Friedman Memorial	
+Minimum delay time: 13.0
+Maximum delay time: 33.0
+Average: 24.5
+
+Airport: Tallahassee, FL: Tallahassee International	
+Minimum delay time: 1.0
+Maximum delay time: 55.0
+Average: 17.0
+
+Airport: Toledo, OH: Toledo Express	
+Minimum delay time: 4.0
+Maximum delay time: 40.0
+Average: 22.6
+
+Airport: Bristol/Johnson City/Kingsport, TN: Tri-Cities Regional TN/VA	
+Minimum delay time: 1.0
+Maximum delay time: 78.0
+Average: 36.25
+
+Airport: Twin Falls, ID: Joslin Field - Magic Valley Regional	
+Minimum delay time: 1.0
+Maximum delay time: 32.0
+Average: 12.0
+
+Airport: Texarkana, AR: Texarkana Regional-Webb Field	
+Minimum delay time: 12.0
+Maximum delay time: 12.0
+Average: 12.0
+
+Airport: Tyler, TX: Tyler Pounds Regional	
+Minimum delay time: 4.0
+Maximum delay time: 149.0
+Average: 50.2
+
+Airport: Valdosta, GA: Valdosta Regional	
+Minimum delay time: 20.0
+Maximum delay time: 50.0
+Average: 35.0
+
+Airport: Wrangell, AK: Wrangell Airport	
+Minimum delay time: 31.0
+Maximum delay time: 31.0
+Average: 31.0
+
+Airport: Fayetteville, AR: Northwest Arkansas Regional	
+Minimum delay time: 1.0
+Maximum delay time: 119.0
+Average: 32.88889
+
+Airport: Yakutat, AK: Yakutat Airport	
+Minimum delay time: 3.0
+Maximum delay time: 41.0
+Average: 21.333334
