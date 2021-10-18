@@ -14,7 +14,7 @@ public class MainApp {
     private final static String EMPTY_STRING = "";
     private final static String COMMA = ",";
 
-    private final static int DEST_AIRPORT_ID
+    private final static int COLUMN_NUMBER_OF_DEST_AIRPORT_ID = 
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
