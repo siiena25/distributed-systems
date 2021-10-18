@@ -61,11 +61,13 @@ public class FlightsSerializable implements Serializable {
     }
 
     public static FlightsSerializable add(FlightsSerializable flight, AirportSerializable airport) {
-        boolean isDelayed = airport.getDelay() > 0.f || airport.isCancelled();
         float delayFlight = Math.max(flight.getMaxTimeOfDelay(), airport.getDelay());
-        float isDelayedFlight = isDelayed ? flight.getDelayFlights() + 1 : flight.getDelayFlights();
-        float isCancelledFlight = airport.isCancelled() ? flight.getCancelledFlights() + 1 : flight.getCancelledFlights();
         int numberOfFlights = flight.getNumberOfFlights() + 1;
+        float isDelayedFlight = (airport.getDelay() > 0.f || airport.isCancelled()) ?
+                flight.getDelayFlights() + 1 : flight.getDelayFlights();
+        float isCancelledFlight = airport.isCancelled() ?
+                flight.getCancelledFlights() + 1 : flight.getCancelledFlights();
+
         return new FlightsSerializable(delayFlight, isDelayedFlight, isCancelledFlight, numberOfFlights);
     }
 }
