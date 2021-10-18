@@ -73,7 +73,7 @@ public class MainApp {
         );
     }
 
-    private static String getPercentageOfFlights(float v, int numberOfFlights) {
+    private static String getPercentageOfFlights(float time, int numberOfFlights) {
         return 
     }
 
