@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class FlightsSerializable implements Serializable {
 
+    private static final float ZERO_DELAY = 0.f;
+
     private float maxTimeOfDelay;
     private float delayFlights;
     private float cancelledFlights;
@@ -63,7 +65,7 @@ public class FlightsSerializable implements Serializable {
     public static FlightsSerializable mergeValue(FlightsSerializable flight, AirportSerializable airport) {
         float delayFlight = Math.max(flight.getMaxTimeOfDelay(), airport.getDelay());
         int numberOfFlights = flight.getNumberOfFlights() + 1;
-        float isDelayedFlight = (airport.getDelay() > 0.f || airport.isCancelled()) ?
+        float isDelayedFlight = (airport.getDelay() > ZERO_DELAY || airport.isCancelled()) ?
                 flight.getDelayFlights() + 1 : flight.getDelayFlights();
         float isCancelledFlight = airport.isCancelled() ?
                 flight.getCancelledFlights() + 1 : flight.getCancelledFlights();

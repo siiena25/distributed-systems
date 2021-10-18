@@ -38,11 +38,11 @@ public class MainApp {
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
 
         JavaPairRDD<Tuple2<Integer, Integer>, AirportSerializable> flightsData = flightsFile.mapToPair(MainApp::getFlightPairs);
-        Map<Integer, String> airportsDataMap = airportsFile.mapToPair(MainApp::getAirportPairs).collectAsMap();
-
         JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData = reduceFlights(flightsData);
+
+        Map<Integer, String> airportsDataMap = airportsFile.mapToPair(MainApp::getAirportPairs).collectAsMap();
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
-        
+
         JavaRDD<String> mappedFlights = mapFlights(reducedFlightsData, airportsBroadcasted);
         mappedFlights.saveAsTextFile("hdfs://localhost:9000/user/julia/output");
     }
@@ -53,21 +53,22 @@ public class MainApp {
     ) {
         return reducedFlightsData.map(
                 flight -> {
-                    Map<Integer, String> airportId = airportsBroadcasted.value();
+                    Map<Integer, String> airportIds = airportsBroadcasted.value();
                     Tuple2<Integer, Integer> key = flight._1();
+
                     float maxTimeOfDelay = flight._2.getMaxTimeOfDelay();
                     float delayFlights = flight._2.getDelayFlights();
                     float cancelledFlights = flight._2.getCancelledFlights();
                     int numberOfFlights = flight._2.getNumberOfFlights();
 
-                    String originAirport = airportId.get(key._1);
-                    String destAirport = airportId.get(key._2);
+                    String originAirport = airportIds.get(key._1);
+                    String destAirport = airportIds.get(key._2);
 
                     return "\nOriginAirport: " + originAirport +
                             "\nDestAirport: " + destAirport +
                             "\nMax time of delay: " + maxTimeOfDelay +
                             "\nPercentage of late and canceled flights: " + getPercentageOfFlights(
-                                    delayFlights + cancelledFlights, numberOfFlights);
+                            delayFlights + cancelledFlights, numberOfFlights);
                 }
         );
     }
