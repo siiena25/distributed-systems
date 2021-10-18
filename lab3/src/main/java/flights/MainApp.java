@@ -34,7 +34,7 @@ public class MainApp {
     }
 
     private static Tuple2<Object, Object> getAirportPairs(String line) {
-        int indexOf
+        int indexOfComma = 
     }
 
     private static JavaRDD<String> removeQuotes(JavaRDD<String> textFile) {
