@@ -51,7 +51,9 @@ public class MainApp {
             JavaPairRDD<Tuple2<Integer, Integer>, AirportSerializable> flightsData
     ) {
         return flightsData.combineByKey(
-                flight -> 
+                flight -> new FlightsSerializable(
+                        
+                )
         )
     }
 
