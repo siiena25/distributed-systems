@@ -3,6 +3,7 @@ package flights;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.Tuple2;
 
 import java.util.Map;
 
@@ -27,8 +28,12 @@ public class MainApp {
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
 
         Map<Integer, String> airportsDataMap = airportsFile.mapToPair(
-                line -> getAirportPair()
+                line -> getAirportPairs(line)
         );
+        
+    }
+
+    private static Tuple2<Object, Object> getAirportPairs(String line) {
         
     }
 
