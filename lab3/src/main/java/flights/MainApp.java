@@ -25,13 +25,8 @@ public class MainApp {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        if (args.length != 2) {
-            System.err.println("Usage: flights.MainApp <flights> <airports>");
-            System.exit(-1);
-        }
-
-        String flights = args[0];
-        String airports = args[1];
+        String flights = "664600583_T_ONTIME_sample.csv";
+        String airports = "L_AIRPORT_ID.csv";
 
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights).filter(line -> !line.contains("YEAR")));
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports).filter(line -> !line.contains("Code")));
