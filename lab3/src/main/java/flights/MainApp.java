@@ -52,6 +52,7 @@ public class MainApp {
     ) {
         return flightsData.combineByKey(
                 flight -> new FlightsSerializable(
+                        flight.getDelay(),
                         
                 )
         )
