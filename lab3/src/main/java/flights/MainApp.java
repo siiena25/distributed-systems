@@ -38,7 +38,7 @@ public class MainApp {
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
 
-        JavaPairRDD<Integer, String> flightsData = flightsFile.mapToPair(MainApp::getFlightPairs).collectAsMap();
+        JavaPairRDD<Tuple2<Integer, Integer>, AirportSerializable> flightsData = flightsFile.mapToPair(MainApp::getFlightPairs).collectAsMap();
         Map<Integer, String> airportsDataMap = airportsFile.mapToPair(MainApp::getAirportPairs).collectAsMap();
 
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
