@@ -11,6 +11,7 @@ public class MainApp {
 
     private final static String QUOTES = "\"";
     private final static String EMPTY_STRING = "";
+    private final static String COMMA = ",";
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
@@ -34,7 +35,7 @@ public class MainApp {
     }
 
     private static Tuple2<Object, Object> getAirportPairs(String line) {
-        int indexOfComma = 
+        int indexOfComma = line.indexOf(COMMA);
     }
 
     private static JavaRDD<String> removeQuotes(JavaRDD<String> textFile) {
