@@ -73,8 +73,8 @@ public class MainApp {
         );
     }
 
-    private static String getPercentageOfFlights(float time, int numberOfFlights) {
-        return 
+    private static Integer getPercentageOfFlights(float time, int numberOfFlights) {
+        return time / numberOfFlights * 100;
     }
 
     private static JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reduceFlights(
