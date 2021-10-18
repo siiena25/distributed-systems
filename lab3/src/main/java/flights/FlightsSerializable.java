@@ -65,7 +65,7 @@ public class FlightsSerializable implements Serializable {
     public static FlightsSerializable mergeValue(FlightsSerializable flight, AirportSerializable airport) {
         float delayFlight = Math.max(flight.getMaxTimeOfDelay(), airport.getDelay());
         int numberOfFlights = flight.getNumberOfFlights() + 1;
-        float isDelayedFlight = 
+        float isDelayedFlight =
                 (airport.getDelay() > ZERO_DELAY || airport.isCancelled()) ?
                 flight.getDelayFlights() + 1 : flight.getDelayFlights();
         float isCancelledFlight =
