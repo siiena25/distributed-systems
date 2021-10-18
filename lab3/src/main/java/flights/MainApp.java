@@ -13,6 +13,9 @@ public class MainApp {
             System.exit(-1);
         }
 
+        String flights = args[0];
+        String airports = args[1];
+
         
     }
 }
