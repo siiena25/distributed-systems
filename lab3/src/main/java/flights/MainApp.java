@@ -44,12 +44,14 @@ public class MainApp {
         
     }
 
-    private static Tuple2<Tuple2<Integer, Integer>, String> getFlightPairs(String line) {
+    private static Tuple2<Tuple2<Integer, Integer>, AirportSerializable> getFlightPairs(String line) {
         String[] columnsOfFlightsTable = line.split(COMMA);
         int originAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_ORIGIN_AIRPORT_ID]);
         int destAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_DEST_AIRPORT_ID]);
         float delay = saveGetDelay(columnsOfFlightsTable[COLUMN_NUMBER_OF_DELAY_ID]);
         boolean isCancelled = columnsOfFlightsTable[COLUMN_NUMBER_OF_IS_CANCELLED_ID].isEmpty();
+
+        return Tuple2
     }
 
     private static float saveGetDelay(String line) {
