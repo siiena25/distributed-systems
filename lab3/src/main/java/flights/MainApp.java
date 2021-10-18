@@ -68,7 +68,7 @@ public class MainApp {
                     String output = "\nOriginAirport: " + originAirport +
                             "\nDestAirport: " + destAirport +
                             "\nMax time of delay: " + maxTimeOfDelay +
-                            "\nPercentage of late and canceled flights: " + 
+                            "\nPercentage of late and canceled flights: " + getPercentageOfFlights()
                 }
         );
     }
