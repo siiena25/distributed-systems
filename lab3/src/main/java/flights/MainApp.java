@@ -51,7 +51,10 @@ public class MainApp {
         float delay = saveGetDelay(columnsOfFlightsTable[COLUMN_NUMBER_OF_DELAY_ID]);
         boolean isCancelled = columnsOfFlightsTable[COLUMN_NUMBER_OF_IS_CANCELLED_ID].isEmpty();
 
-        return new Tuple2<>()
+        return new Tuple2<>(
+                new Tuple2<>(originAirportId, destAirportId), 
+                new AirportSerializable(originAirportId, destAirportId, delay, isCancelled)
+        );
     }
 
     private static float saveGetDelay(String line) {
