@@ -64,7 +64,7 @@ public class FlightsSerializable implements Serializable {
         boolean isDelayed = airport.getDelay() > 0.f || airport.isCancelled();
         float delayFlight = Math.max(flight.getMaxTimeOfDelay(), airport.getDelay());
         float isDelayedFlight = isDelayed ? flight.getDelayFlights() + 1 : flight.getDelayFlights();
-        
+        float isCancelledFlight = isDelayed ? flight.getDelayFlights() + 1 : flight.getDelayFlights();
         return new FlightsSerializable(
                 delay,
 
