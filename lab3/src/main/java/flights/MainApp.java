@@ -62,10 +62,12 @@ public class MainApp {
                     float cancelledFlights = flight._2.getCancelledFlights();
                     int numberOfFlights = flight._2.getNumberOfFlights();
 
-                    String originAirportId = airportId.get(key._1);
-                    String destAirportId = airportId.get(key._2);
+                    String originAirport = airportId.get(key._1);
+                    String destAirport = airportId.get(key._2);
 
-                    return 
+                    String output = "\nOriginAirport: " + originAirport +
+                            "\nDestAirport: " + destAirport +
+                            ""
                 }
         );
     }
