@@ -63,7 +63,7 @@ public class MainApp {
                     int numberOfFlights = flight._2.getNumberOfFlights();
 
                     String originAirportId = airportId.get(key._1);
-                    
+                    String destAirportId = airportId.get(key._2);
                 }
         );
     }
