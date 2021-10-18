@@ -67,7 +67,8 @@ public class MainApp {
 
                     String output = "\nOriginAirport: " + originAirport +
                             "\nDestAirport: " + destAirport +
-                            ""
+                            "Max time of delay: " + maxTimeOfDelay +
+                            
                 }
         );
     }
