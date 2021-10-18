@@ -6,6 +6,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class MainApp {
@@ -42,10 +43,7 @@ public class MainApp {
     }
 
     private static Tuple2<Integer, String> getFlightPairs(String line) {
-        int indexOfComma = line.indexOf(COMMA);
-        Integer airportID = Integer.valueOf(line.substring(0, indexOfComma));
-        String airportName = line.substring(indexOfComma + 1);
-        return new Tuple2<>(airportID, airportName);
+        ArrayList<String> columnsOfFlightsTable = line.indexOf()
     }
 
     private static Tuple2<Integer, String> getAirportPairs(String line) {
