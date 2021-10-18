@@ -41,6 +41,8 @@ public class MainApp {
         JavaPairRDD<Tuple2<Integer, Integer>, AirportSerializable> flightsData = flightsFile.mapToPair(MainApp::getFlightPairs);
         Map<Integer, String> airportsDataMap = airportsFile.mapToPair(MainApp::getAirportPairs).collectAsMap();
 
+
+
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
         
     }
