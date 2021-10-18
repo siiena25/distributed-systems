@@ -46,7 +46,7 @@ public class MainApp {
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
         
         JavaRDD<String> mappedFlights = mapFlights(reducedFlightsData, airportsBroadcasted);
-        
+        mappedFlights.saveAsTextFile();
     }
 
     private static JavaRDD<String> mapFlights(
