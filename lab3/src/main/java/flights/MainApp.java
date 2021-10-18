@@ -53,7 +53,7 @@ public class MainApp {
         return flightsData.combineByKey(
                 flight -> new FlightsSerializable(
                         flight.getDelay(),
-                        flight.getDelay() > ZERO_DELAY ? 
+                        flight.getDelay() > ZERO_DELAY ? 1 : 0,
                 )
         )
     }
