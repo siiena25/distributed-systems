@@ -12,7 +12,7 @@ public class FlightsSerializable implements Serializable {
     public FlightsSerializable() {
     }
 
-    public FlightsSerializable(float maxTimeOfDelay, int delayFlights, int cancelledFlights, int numberOfFlights) {
+    public FlightsSerializable(float maxTimeOfDelay, float delayFlights, float cancelledFlights, int numberOfFlights) {
         this.maxTimeOfDelay = maxTimeOfDelay;
         this.delayFlights = delayFlights;
         this.cancelledFlights = cancelledFlights;
@@ -27,7 +27,7 @@ public class FlightsSerializable implements Serializable {
         this.maxTimeOfDelay = maxTimeOfDelay;
     }
 
-    public int getDelayFlights() {
+    public float getDelayFlights() {
         return delayFlights;
     }
 
@@ -35,7 +35,7 @@ public class FlightsSerializable implements Serializable {
         this.delayFlights = delayFlights;
     }
 
-    public int getCancelledFlights() {
+    public float getCancelledFlights() {
         return cancelledFlights;
     }
 
@@ -65,10 +65,7 @@ public class FlightsSerializable implements Serializable {
         float delayFlight = Math.max(flight.getMaxTimeOfDelay(), airport.getDelay());
         float isDelayedFlight = isDelayed ? flight.getDelayFlights() + 1 : flight.getDelayFlights();
         float isCancelledFlight = airport.isCancelled() ? flight.getCancelledFlights() + 1 : flight.getCancelledFlights();
-        int numberOfFlights = 
-        return new FlightsSerializable(
-                delay,
-
-        );
+        int numberOfFlights = flight.getNumberOfFlights() + 1;
+        return new FlightsSerializable(delayFlight, isDelayedFlight, isCancelledFlight, numberOfFlights);
     }
 }
