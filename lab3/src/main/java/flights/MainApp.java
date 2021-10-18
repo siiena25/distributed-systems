@@ -1,6 +1,7 @@
 package flights;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 public class MainApp {
@@ -16,6 +17,6 @@ public class MainApp {
         String flights = args[0];
         String airports = args[1];
 
-        
+        JavaRDD<String> flightsFile = sc.textFile(flights)
     }
 }
