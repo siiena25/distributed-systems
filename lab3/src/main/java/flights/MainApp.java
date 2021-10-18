@@ -31,7 +31,7 @@ public class MainApp {
             System.exit(-1);
         }
 
-        String flights = args[0];
+        String flights = sc.textFile("664600583_T_ONTIME_sample.csv");
         String airports = args[1];
 
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
