@@ -51,7 +51,7 @@ public class FlightsSerializable implements Serializable {
         this.numberOfFlights = numberOfFlights;
     }
 
-    public static FlightsSerializable plus(FlightsSerializable firstFlight, FlightsSerializable secondFlight) {
+    public static FlightsSerializable merge(FlightsSerializable firstFlight, FlightsSerializable secondFlight) {
         return new FlightsSerializable(
                 firstFlight.getMaxTimeOfDelay() + secondFlight.getMaxTimeOfDelay(),
                 firstFlight.getDelayFlights() + secondFlight.getDelayFlights(),
@@ -60,7 +60,7 @@ public class FlightsSerializable implements Serializable {
         );
     }
 
-    public static FlightsSerializable add(FlightsSerializable flight, AirportSerializable airport) {
+    public static FlightsSerializable mergeValue(FlightsSerializable flight, AirportSerializable airport) {
         float delayFlight = Math.max(flight.getMaxTimeOfDelay(), airport.getDelay());
         int numberOfFlights = flight.getNumberOfFlights() + 1;
         float isDelayedFlight = (airport.getDelay() > 0.f || airport.isCancelled()) ?

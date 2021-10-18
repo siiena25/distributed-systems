@@ -56,8 +56,10 @@ public class MainApp {
                         flight.getDelay() > ZERO_DELAY ? 1 : 0,
                         flight.isCancelled() ? 1 : 0,
                         1
-                )
-        )
+                ),
+                FlightsSerializable::mergeValue,
+                FlightsSerializable::merge
+        );
     }
 
     private static Tuple2<Tuple2<Integer, Integer>, AirportSerializable> getFlightPairs(String line) {
