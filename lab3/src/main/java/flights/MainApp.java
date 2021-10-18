@@ -17,6 +17,8 @@ public class MainApp {
         String flights = args[0];
         String airports = args[1];
 
-        JavaRDD<String> flightsFile = sc.textFile(flights)
+        JavaRDD<String> flightsFile = sc.textFile(flights);
+        JavaRDD<String> airportsFile = sc.textFile(airports);
+        
     }
 }
