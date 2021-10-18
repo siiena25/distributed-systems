@@ -61,6 +61,8 @@ public class MainApp {
                     float delayFlights = flight._2.getDelayFlights();
                     float cancelledFlights = flight._2.getCancelledFlights();
                     int numberOfFlights = flight._2.getNumberOfFlights();
+
+                    String originAirportId =
                 }
         );
     }
