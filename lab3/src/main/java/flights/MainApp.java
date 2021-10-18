@@ -62,7 +62,8 @@ public class MainApp {
                     float cancelledFlights = flight._2.getCancelledFlights();
                     int numberOfFlights = flight._2.getNumberOfFlights();
 
-                    String originAirportId =
+                    String originAirportId = airportId.get(key._1);
+                    
                 }
         );
     }
