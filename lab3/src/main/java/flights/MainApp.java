@@ -30,7 +30,7 @@ public class MainApp {
 
         Map<Integer, String> airportsDataMap = airportsFile.mapToPair(MainApp::getAirportPairs).collectAsMap();
 
-        
+        final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
         
     }
 
