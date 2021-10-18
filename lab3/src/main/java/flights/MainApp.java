@@ -55,7 +55,7 @@ public class MainApp {
         reducedFlightsData.map(
                 flight -> {
                     Map<Integer, String> airportId = airportsBroadcasted.value();
-                    
+                    Tuple2<>
                 }
         );
     }
