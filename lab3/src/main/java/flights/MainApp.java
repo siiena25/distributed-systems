@@ -5,6 +5,10 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 public class MainApp {
+
+    private final static String QUOTES = "\"";
+    private final static String EMPTY_STRING = "";
+
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -23,7 +27,8 @@ public class MainApp {
     }
 
     private static JavaRDD<String> removeQuotes(JavaRDD<String> textFile) {
-        textFile.map(line ->
-                )
+        textFile.map(
+                line -> line.replaceAll(QUOTES, EMPTY_STRING)
+        );
     }
 }
