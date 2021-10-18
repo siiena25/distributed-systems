@@ -26,7 +26,7 @@ public class MainApp {
         JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
         JavaRDD<String> airportsFile = removeQuotes(sc.textFile(airports));
 
-        Map<Integer, String> airportsDataMap = 
+        Map<Integer, String> airportsDataMap = airportsFile.mapToPair()
         
     }
 
