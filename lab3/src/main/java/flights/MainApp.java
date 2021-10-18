@@ -3,6 +3,7 @@ package flights;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
 import java.util.Map;
@@ -30,7 +31,7 @@ public class MainApp {
 
         Map<Integer, String> airportsDataMap = airportsFile.mapToPair(MainApp::getAirportPairs).collectAsMap();
 
-        final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
+        final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsDataMap);
         
     }
 
