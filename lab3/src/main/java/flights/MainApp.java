@@ -17,8 +17,11 @@ public class MainApp {
         String flights = args[0];
         String airports = args[1];
 
-        JavaRDD<String> flightsFile = sc.textFile(flights);
+        JavaRDD<String> flightsFile = removeQuotes(sc.textFile(flights));
         JavaRDD<String> airportsFile = sc.textFile(airports);
         
+    }
+
+    private static JavaRDD<String> removeQuotes(JavaRDD<String> textFile) {
     }
 }
