@@ -8,4 +8,8 @@ public class AirportSerializable implements Serializable {
     private int destAirportId;
     private float delay;
     private boolean isCancelled;
+
+    public AirportSerializable(int originAirportId) {
+        this.originAirportId = originAirportId;
+    }
 }
