@@ -44,7 +44,7 @@ public class MainApp {
         
     }
 
-    private static Tuple2<Integer, String> getFlightPairs(String line) {
+    private static Tuple2<Tuple2<Integer, Integer>, String> getFlightPairs(String line) {
         String[] columnsOfFlightsTable = line.split(COMMA);
         int originAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_ORIGIN_AIRPORT_ID]);
         int destAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_DEST_AIRPORT_ID]);
