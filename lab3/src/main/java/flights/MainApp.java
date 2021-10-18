@@ -26,7 +26,7 @@ public class MainApp {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         if (args.length != 3) {
-            System.err.println("Usage: App <flights> <airports> <output>");
+            System.err.println("Usage: MainApp <flights> <airports> <output>");
             System.exit(-1);
         }
 
