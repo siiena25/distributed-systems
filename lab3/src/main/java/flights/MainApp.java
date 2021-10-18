@@ -30,15 +30,15 @@ public class MainApp {
 
         Map<Integer, String> airportsDataMap = airportsFile.mapToPair(
                 line -> getAirportPairs(line)
-        );
+        ).
         
     }
 
-    private static Tuple2<Object, Object> getAirportPairs(String line) {
+    private static Tuple2<Integer, String> getAirportPairs(String line) {
         int indexOfComma = line.indexOf(COMMA);
-        String airport = line.substring(indexOfComma + 1);
         Integer airportID = Integer.valueOf(line.substring(0, indexOfComma));
-        return 
+        String airportName = line.substring(indexOfComma + 1);
+        return new Tuple2<>(airportID, airportName);
     }
 
     private static JavaRDD<String> removeQuotes(JavaRDD<String> textFile) {
