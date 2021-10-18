@@ -57,6 +57,7 @@ public class MainApp {
                 flight -> {
                     Map<Integer, String> airportId = airportsBroadcasted.value();
                     Tuple2<Integer, Integer> key = flight._1();
+                    float maxTimeOfDelay = flight._2.getMaxTimeOfDelay();
                     
                 }
         );
