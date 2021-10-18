@@ -51,7 +51,7 @@ public class MainApp {
             JavaPairRDD<Tuple2<Integer, Integer>, FlightsSerializable> reducedFlightsData,
             final Broadcast<Map<Integer, String>> airportsBroadcasted
     ) {
-        reducedFlightsData.map(
+        return reducedFlightsData.map(
                 flight -> {
                     Map<Integer, String> airportId = airportsBroadcasted.value();
                     Tuple2<Integer, Integer> key = flight._1();
