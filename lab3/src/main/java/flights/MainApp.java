@@ -51,7 +51,7 @@ public class MainApp {
         float delay = saveGetDelay(columnsOfFlightsTable[COLUMN_NUMBER_OF_DELAY_ID]);
         boolean isCancelled = columnsOfFlightsTable[COLUMN_NUMBER_OF_IS_CANCELLED_ID].isEmpty();
 
-        return Tuple2
+        return new Tuple2
     }
 
     private static float saveGetDelay(String line) {
