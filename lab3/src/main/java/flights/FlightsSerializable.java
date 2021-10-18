@@ -7,5 +7,7 @@ public class FlightsSerializable implements Serializable {
     private float maxTimeOfDelay;
     private int delayFlights;
     private int cancelledFlights;
-    private int 
+    private int numberOfFlights;
+
+    
 }
