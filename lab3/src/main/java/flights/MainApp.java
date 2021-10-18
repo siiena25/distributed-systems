@@ -46,7 +46,11 @@ public class MainApp {
         String[] columnsOfFlightsTable = line.split(COMMA);
         int originAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_ORIGIN_AIRPORT_ID]);
         int destAirportId = Integer.parseInt(columnsOfFlightsTable[COLUMN_NUMBER_OF_DEST_AIRPORT_ID]);
-        float delay =
+        float delay = saveGetDelay(delay);
+    }
+
+    private static float saveGetDelay(float delay) {
+
     }
 
     private static Tuple2<Integer, String> getAirportPairs(String line) {
