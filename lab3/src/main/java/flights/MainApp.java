@@ -5,6 +5,7 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
+import scala.Int;
 import scala.Tuple2;
 
 import java.util.ArrayList;
@@ -55,7 +56,8 @@ public class MainApp {
         reducedFlightsData.map(
                 flight -> {
                     Map<Integer, String> airportId = airportsBroadcasted.value();
-                    Tuple2<>
+                    Tuple2<Integer, Integer> key = flight._1();
+                    
                 }
         );
     }
