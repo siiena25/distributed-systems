@@ -59,7 +59,8 @@ public class MainApp {
                     Tuple2<Integer, Integer> key = flight._1();
                     float maxTimeOfDelay = flight._2.getMaxTimeOfDelay();
                     float delayFlights = flight._2.getDelayFlights();
-                    float cancelledFlights = 
+                    float cancelledFlights = flight._2.getCancelledFlights();
+                    int numberOfFlights = flight._2.getNumberOfFlights();
                 }
         );
     }
