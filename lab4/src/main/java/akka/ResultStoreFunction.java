@@ -17,6 +17,11 @@ public class ResultStoreFunction {
             @JsonProperty("functionTitle") String functionTitle,
             @JsonProperty("tests") ArrayList<Test> tests
     ) {
-        
+        this.packageId = packageId;
+        this.script = script;
+        this.functionTitle = functionTitle;
+        this.tests = tests;
     }
+
+    
 }
