@@ -19,7 +19,7 @@ public class ResultStoreActor extends AbstractActor {
                     }
                     store.get(unitApply.getPackageId()).put(unitApply.getTitle(), unitApply.getResult());
                 }
-        ).match(String.class, id -> sender().tell())
+        ).match(String.class, id -> sender().tell(printId(id), ))
     }
 
     private OutputResult printId(String id) {
