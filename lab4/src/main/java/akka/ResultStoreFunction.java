@@ -23,5 +23,19 @@ public class ResultStoreFunction {
         this.tests = tests;
     }
 
-    
+    public String getPackageId() {
+        return packageId;
+    }
+
+    public String getScript() {
+        return script;
+    }
+
+    public String getFunctionTitle() {
+        return functionTitle;
+    }
+
+    public ArrayList<Test> getTests() {
+        return tests;
+    }
 }
