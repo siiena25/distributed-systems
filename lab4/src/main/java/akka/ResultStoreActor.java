@@ -8,7 +8,9 @@ public class ResultStoreActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
                 FunctionResult.class,
-                
+                unitApply -> {
+                    
+                }
         )
     }
 }
