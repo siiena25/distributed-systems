@@ -23,6 +23,6 @@ public class ResultStoreActor extends AbstractActor {
     }
 
     private OutputResult printId(String id) {
-        return new OutputResult()
+        return new OutputResult(id, store.get(id));
     }
 }
