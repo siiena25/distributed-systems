@@ -1,9 +1,12 @@
 package akka;
 
+import akka.actor.ActorSystem;
+
 import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws IOException {
-        ActorSystem
+        ActorSystem system = ActorSystem.create();
+        
     }
 }

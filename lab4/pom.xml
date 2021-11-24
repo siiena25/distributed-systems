@@ -67,5 +67,29 @@
             <artifactId>akka-http-xml_2.12</artifactId>
             <version>${akka-http.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.okumin</groupId>
+            <artifactId>ainterface_2.11</artifactId>
+            <version>0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.zapodot</groupId>
+            <artifactId>akka-test-junit</artifactId>
+            <version>2.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.lightspeed7</groupId>
+            <artifactId>akka-crontab_2.11</artifactId>
+            <version>0.3.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.lightspeed7</groupId>
+            <artifactId>akka-crontab_2.12</artifactId>
+            <version>0.3.3</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>
