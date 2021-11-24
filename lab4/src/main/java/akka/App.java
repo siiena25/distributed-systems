@@ -1,2 +1,4 @@
-package akka;public class App {
+package akka;
+
+public class App {
 }
