@@ -12,6 +12,7 @@ public class ResultStoreFunction {
     private final ArrayList<Test> tests;
 
     public ResultStoreFunction(
-            @JsonProperty("packageId")
+            @JsonProperty("packageId") String packageId,
+            
     )
 }
