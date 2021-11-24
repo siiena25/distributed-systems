@@ -10,5 +10,5 @@ public class UnitTest {
     private final String testTitle;
     private final String funstionTitle;
     private final String result;
-    private final ArrayList<Integer> packageId;
+    private final ArrayList<Integer> params;
 }
