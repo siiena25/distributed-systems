@@ -19,6 +19,6 @@ public class ResultStoreActor extends AbstractActor {
                     }
                     store.get(unitApply.getPackageId()).put(unitApply.getTitle(), unitApply.getResult());
                 }
-        ).match(String.class, id -> )
+        ).match(String.class, id -> sender().tell())
     }
 }
