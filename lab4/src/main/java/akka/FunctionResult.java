@@ -10,7 +10,7 @@ public class FunctionResult {
         this.title = title;
         this.result = result;
     }
-    
+
     public String getPackageId() {
         return packageId;
     }
