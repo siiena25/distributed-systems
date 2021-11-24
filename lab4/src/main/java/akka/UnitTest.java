@@ -11,4 +11,6 @@ public class UnitTest {
     private final String funstionTitle;
     private final String result;
     private final ArrayList<Integer> params;
+
+    public UnitTest()
 }
