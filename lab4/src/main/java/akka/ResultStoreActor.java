@@ -9,7 +9,7 @@ public class ResultStoreActor extends AbstractActor {
         return ReceiveBuilder.create().match(
                 FunctionResult.class,
                 unitApply -> {
-                    
+                    if (unitApply)
                 }
         )
     }
