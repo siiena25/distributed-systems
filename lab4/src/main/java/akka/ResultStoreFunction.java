@@ -10,5 +10,5 @@ public class ResultStoreFunction {
     private final String functionTitle;
     private final ArrayList<Test> tests;
 
-    
+    public ResultStoreFunction()
 }
