@@ -54,6 +54,7 @@ public class App {
         CompletionStage<ServerBinding> bindingCompletionStage =
                 http.bindAndHandle(httpFlow, ConnectHttp.toHost("localhost", 8080), materializer);
         System.out.println("Server online at http://localhost:8080");
+        System.in.read();
         bindingCompletionStage.thenCompose(ServerBinding::unbind).thenAccept(consumer -> system.terminate());
 
     }
