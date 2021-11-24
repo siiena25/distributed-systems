@@ -13,6 +13,6 @@ public class ResultStoreFunction {
 
     public ResultStoreFunction(
             @JsonProperty("packageId") String packageId,
-            @JsonProperty("packageId") String packageId,
+            @JsonProperty("script") String scripts,
     )
 }
