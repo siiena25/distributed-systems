@@ -17,6 +17,7 @@ public class ResultStoreActor extends AbstractActor {
                     if (!store.containsKey(unitApply.getPackageId())) {
                         store.put(unitApply.getPackageId(), new HashMap<>());
                     }
+                    store.get()
                 }
         )
     }
