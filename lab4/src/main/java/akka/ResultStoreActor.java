@@ -14,7 +14,9 @@ public class ResultStoreActor extends AbstractActor {
         return ReceiveBuilder.create().match(
                 FunctionResult.class,
                 unitApply -> {
-                    if (!store.containsKey())
+                    if (!store.containsKey(unitApply.getPackageId())) {
+                        
+                    }
                 }
         )
     }
