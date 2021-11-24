@@ -16,5 +16,7 @@ public class ResultStoreFunction {
             @JsonProperty("script") String script,
             @JsonProperty("functionTitle") String functionTitle,
             @JsonProperty("tests") ArrayList<Test> tests
-    )
+    ) {
+        
+    }
 }
