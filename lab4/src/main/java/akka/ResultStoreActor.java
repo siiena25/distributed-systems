@@ -21,4 +21,6 @@ public class ResultStoreActor extends AbstractActor {
                 }
         ).match(String.class, id -> sender().tell())
     }
+
+    private OutputResult printId()
 }
