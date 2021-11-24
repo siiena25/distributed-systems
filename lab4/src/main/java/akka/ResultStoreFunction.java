@@ -8,5 +8,7 @@ public class ResultStoreFunction {
     private final String packageId;
     private final String scripts;
     private final String functionTitle;
-    private final ArrayList<Test>
+    private final ArrayList<Test> tests;
+
+    
 }
