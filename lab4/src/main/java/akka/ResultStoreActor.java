@@ -11,15 +11,19 @@ public class ResultStoreActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create().match(
-                FunctionResult.class,
-                unitApply -> {
-                    if (!store.containsKey(unitApply.getPackageId())) {
-                        store.put(unitApply.getPackageId(), new HashMap<>());
-                    }
-                    store.get(unitApply.getPackageId()).put(unitApply.getTitle(), unitApply.getResult());
-                }
-        ).match(String.class, id -> sender().tell(printId(id), self()))
+        return ReceiveBuilder
+                .create()
+                .match(
+                        FunctionResult.class,
+                        unitApply -> {
+                            if (!store.containsKey(unitApply.getPackageId())) {
+                                store.put(unitApply.getPackageId(), new HashMap<>());
+                            }
+                            store.get(unitApply.getPackageId()).put(unitApply.getTitle(), unitApply.getResult());
+                        }
+                )
+                .match(String.class, id -> sender().tell(printId(id), self()))
+                .build();
     }
 
     private OutputResult printId(String id) {
