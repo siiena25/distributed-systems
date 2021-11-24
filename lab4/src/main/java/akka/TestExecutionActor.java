@@ -1,4 +1,10 @@
 package akka;
 
-public class TestExecutionActor {
+import akka.actor.AbstractActor;
+
+public class TestExecutionActor extends AbstractActor {
+    @Override
+    public Receive createReceive() {
+        return null;
+    }
 }
