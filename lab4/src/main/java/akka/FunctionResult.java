@@ -5,5 +5,5 @@ public class FunctionResult {
     private String title;
     private String result;
 
-    
+    public FunctionResult
 }
