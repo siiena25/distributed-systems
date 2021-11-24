@@ -1,21 +1,20 @@
 package akka;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class UnitTest {
     private final String packageId;
     private final String script;
-    private final String testTitle;
+    private final String testName;
     private final String functionTitle;
     private final String result;
     private final ArrayList<Integer> params;
 
-    public UnitTest(String packageId, String script, String testTitle, String functionTitle, String result, ArrayList<Integer> params) {
+    public UnitTest(String packageId, String script, String testName, String functionTitle, String result, ArrayList<Integer> params) {
         this.packageId = packageId;
         this.script = script;
-        this.testTitle = testTitle;
+        this.testName = testName;
         this.functionTitle = functionTitle;
         this.result = result;
         this.params = params;
@@ -31,7 +30,7 @@ public class UnitTest {
     }
 
     public String getTestTitle() {
-        return testTitle;
+        return testName;
     }
 
     public String getFunctionTitle() {
@@ -46,5 +45,15 @@ public class UnitTest {
         return params;
     }
 
-    public static ArrayList<UnitTest> funcHandler()
+    public static ArrayList<UnitTest> funcHandler(ResultStoreFunction function) {
+        ArrayList<UnitTest> tests = function.getTests().stream().map(test -> new UnitTest(
+                function.getPackageId(),
+                function.getScript(),
+                function.getFunctionTitle(),
+                test.getTestTitle(),
+                test.getExpectedResult(),
+                test.getParams()
+        )).collect(Collectors.toCollection(ArrayList::new));
+        return tests;
+    }
 }

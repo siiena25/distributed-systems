@@ -1,7 +1,7 @@
 package akka;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.junit.Test;
 
 import java.util.ArrayList;
 
@@ -11,10 +11,11 @@ public class ResultStoreFunction {
     private final String functionTitle;
     private final ArrayList<Test> tests;
 
+    @JsonCreator
     public ResultStoreFunction(
             @JsonProperty("packageId") String packageId,
-            @JsonProperty("script") String script,
-            @JsonProperty("functionTitle") String functionTitle,
+            @JsonProperty("jsScript") String script,
+            @JsonProperty("functionName") String functionTitle,
             @JsonProperty("tests") ArrayList<Test> tests
     ) {
         this.packageId = packageId;
