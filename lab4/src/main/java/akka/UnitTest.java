@@ -20,7 +20,6 @@ public class UnitTest {
         this.params = params;
     }
 
-
     public String getPackageId() {
         return packageId;
     }
@@ -46,14 +45,13 @@ public class UnitTest {
     }
 
     public static ArrayList<UnitTest> funcHandler(ResultStoreFunction function) {
-        ArrayList<UnitTest> tests = function.getTests().stream().map(test -> new UnitTest(
+        return function.getTests().stream().map(test -> new UnitTest(
                 function.getPackageId(),
                 function.getScript(),
                 function.getFunctionTitle(),
-                test.getTestTitle(),
+                test.getTestName(),
                 test.getExpectedResult(),
                 test.getParams()
         )).collect(Collectors.toCollection(ArrayList::new));
-        return tests;
     }
 }

@@ -22,7 +22,7 @@ public class Test implements Serializable {
         this.params = params;
     }
 
-    public String getTestTitle() {
+    public String getTestName() {
         return testName;
     }
 
