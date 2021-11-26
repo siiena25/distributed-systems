@@ -15,7 +15,7 @@ public class FunctionResult {
         return packageId;
     }
 
-    public String getTitle() {
+    public String getTestName() {
         return testName;
     }
 
