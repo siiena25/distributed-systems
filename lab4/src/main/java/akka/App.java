@@ -44,16 +44,13 @@ public class App {
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create();
         ActorRef resultStoreActor = system.actorOf(Props.create(ResultStoreActor.class));
-        ActorRef testExecutionActor = system.actorOf(
-                new RoundRobinPool(5).props(Props.create(TestExecutionActor.class))
-        );
+        ActorRef testExecutionActor = system.actorOf(new RoundRobinPool(5).props(Props.create(TestExecutionActor.class)));
         Http http = Http.get(system);
         Materializer materializer = ActorMaterializer.create(system);
-        Flow<HttpRequest, HttpResponse, NotUsed> httpFlow =
-                createRoute(resultStoreActor, testExecutionActor).flow(system, materializer);
-        CompletionStage<ServerBinding> bindingCompletionStage =
-                http.bindAndHandle(httpFlow, ConnectHttp.toHost("localhost", 8080), materializer);
-        System.out.println("Server online at http://localhost:8080");
+        Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, materializer);
+        ConnectHttp connect = ConnectHttp.toHost("localhost", 8080);
+        final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(handler, connect, materializer);
+        System.out.println("Start..");
         System.in.read();
         bindingCompletionStage.thenCompose(ServerBinding::unbind).thenAccept(consumer -> system.terminate());
 

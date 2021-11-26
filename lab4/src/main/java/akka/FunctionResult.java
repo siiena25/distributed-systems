@@ -1,13 +1,13 @@
 package akka;
 
 public class FunctionResult {
-    private String packageId;
-    private String title;
-    private String result;
+    private final String packageId;
+    private final String testName;
+    private final String result;
 
     public FunctionResult(String packageId, String title, String result) {
         this.packageId = packageId;
-        this.title = title;
+        this.testName = title;
         this.result = result;
     }
 
@@ -15,23 +15,11 @@ public class FunctionResult {
         return packageId;
     }
 
-    public void setPackageId(String packageId) {
-        this.packageId = packageId;
-    }
-
     public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+        return testName;
     }
 
     public String getResult() {
         return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
     }
 }
