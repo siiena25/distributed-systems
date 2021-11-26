@@ -48,7 +48,7 @@ public class App {
         Http http = Http.get(system);
         Materializer materializer = ActorMaterializer.create(system);
         Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, materializer);
-        ConnectHttp connect = ConnectHttp.toHost("localhost", 8080);
+        ConnectHttp connect = ConnectHttp.toHost("localhost", 8090);
         final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(handler, connect, materializer);
         System.out.println("Start..");
         System.in.read();
