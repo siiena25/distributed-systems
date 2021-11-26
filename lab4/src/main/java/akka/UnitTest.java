@@ -28,7 +28,7 @@ public class UnitTest {
         return script;
     }
 
-    public String getTestTitle() {
+    public String getTestName() {
         return testName;
     }
 

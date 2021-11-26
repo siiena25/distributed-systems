@@ -26,7 +26,7 @@ public class TestExecutionActor extends AbstractActor {
                     System.out.println("Answer: " + answer);
                     sender().tell(new FunctionResult(
                             item.getPackageId(),
-                            item.getTestTitle(),
+                            item.getTestName(),
                             answer
                     ), self());
                 }
