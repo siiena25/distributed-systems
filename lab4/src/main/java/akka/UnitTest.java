@@ -28,10 +28,6 @@ public class UnitTest {
         return script;
     }
 
-    public String getTestName() {
-        return testName;
-    }
-
     public String getFunctionTitle() {
         return functionTitle;
     }
