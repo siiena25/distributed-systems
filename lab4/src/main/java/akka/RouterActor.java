@@ -4,7 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorSelection;
 
 public class RouterActor extends AbstractActor {
-    private ActorSelection testPerformer = 
+    private ActorSelection testPerformer = getContext().actorSelection()
     @Override
     public Receive createReceive() {
         return receiveBuilder().match(
