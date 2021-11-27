@@ -27,7 +27,7 @@ public class App {
     private final static int TIMEOUT_MILLIS = 5000;
 
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
-        return concat(path("test", () -> route(
+        return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
                     Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
                     return completeOKWithFuture(res, Jackson.marshaller());
@@ -41,7 +41,7 @@ public class App {
                     return complete("OK");
                 }))
 
-        )));
+        );
     }
 
     public static void main(String[] args) {
