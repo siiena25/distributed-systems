@@ -26,7 +26,7 @@ public class App {
     private final static String QUERY_NAME = "packageId";
 
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
-        return concat(path("test")) route(
+        return concat(path("test", () route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
                     Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(Integer.parseInt(packageId)), 5000);
                     return completeOKWithFuture(res, Jackson.marshaller());
