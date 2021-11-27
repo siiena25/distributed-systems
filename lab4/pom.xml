@@ -51,6 +51,7 @@
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-http_2.12</artifactId>
             <version>${akka-http.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
