@@ -49,8 +49,6 @@ public class App {
         final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost("localhost", 8080);
         final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(handler, connect, actorMaterializer);
-        System.out.println("Start...");
-        System.in.read();
         bindingCompletionStage.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
 }
