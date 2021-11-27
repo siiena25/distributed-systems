@@ -12,7 +12,7 @@ public class TestExecutionActor extends AbstractActor {
     private final static String FAIL_RESULT = "FAIL";
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder()match(
+        return ReceiveBuilder.create().match(
                 UnitTest.class,
                 item -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
