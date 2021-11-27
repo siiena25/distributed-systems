@@ -12,7 +12,7 @@ public class TestsActor extends AbstractActor {
                 MessageTests.class,
                 msg -> {
                     for (Test test : msg.getTests()) {
-                        testPerformer.tell(new );
+                        testPerformer.tell(new MessageTest());
                     }
                 }
         );
