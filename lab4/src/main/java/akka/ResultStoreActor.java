@@ -16,7 +16,7 @@ public class ResultStoreActor extends AbstractActor {
                         FunctionResult.class,
                         msg -> {
                             if (!store.containsKey(msg.getPackageId())) {
-                                store.put(msg.getPackageId(), new HashMap<>());
+                                store.put(msg.getPackageId(), msg.getTestName());
                             } else {
                                 ArrayList<Test> tests = store.get(msg.getPackageId());
                                 tests.addAll(msg.getTestName());
