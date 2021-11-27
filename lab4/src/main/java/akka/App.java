@@ -10,11 +10,9 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
-import akka.pattern.PatternsCS;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import scala.Int;
 import scala.concurrent.Future;
 
 import java.util.ArrayList;
@@ -30,7 +28,7 @@ public class App {
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
-                    Future<Object> res = PatternsCS.ask(resultStoreActor, packageId, 5000);
+                    Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(Integer.parseInt(packageId)), 5000);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(ResultStoreFunction.class), message -> {
