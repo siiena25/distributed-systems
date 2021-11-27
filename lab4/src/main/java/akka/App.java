@@ -40,7 +40,7 @@ public class App {
                     return complete("OK");
                 }))
 
-        );
+        )));
     }
 
     public static void main(String[] args) {
