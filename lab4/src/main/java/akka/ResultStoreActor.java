@@ -19,7 +19,8 @@ public class ResultStoreActor extends AbstractActor {
                                 store.put(msg.getPackageId(), new HashMap<>());
                             } else {
                                 ArrayList<Test> tests = store.get(msg.getPackageId());
-                                tests.addAll()
+                                tests.addAll(msg.getTestName());
+
                             }
                             store.get(msg.getPackageId()).put(msg.getTestName(), msg.getResult());
                         }
