@@ -41,9 +41,9 @@ public class App {
         );
     }
 
-    public static void main(String[] args) throws IOException {
-        ActorSystem system = ActorSystem.create("actorSystem");
-        ActorRef resultStoreActor = system.actorOf(Props.create(ResultStoreActor.class), "resultStore");
+    public static void main(String[] args) {
+        ActorSystem system = ActorSystem.create();
+        ActorRef resultStoreActor = system.actorOf(Props.create(ResultStoreActor.class));
         ActorRef testExecutionActor = system.actorOf(new RoundRobinPool(5).props(Props.create(TestExecutionActor.class)));
         Http http = Http.get(system);
         ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
