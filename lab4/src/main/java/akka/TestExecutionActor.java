@@ -21,7 +21,6 @@ public class TestExecutionActor extends AbstractActor {
                     engine.eval(item.getScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(
-                            item.getScript(),
                             item.getFunctionTitle(),
                             item.getParams().toArray()
                     ).toString();

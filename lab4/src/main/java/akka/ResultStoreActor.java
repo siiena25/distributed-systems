@@ -11,9 +11,7 @@ public class ResultStoreActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder
-                .create()
-                .match(
+        return receiveBuilder().match(
                         FunctionResult.class,
                         unitApply -> {
                             if (!store.containsKey(unitApply.getPackageId())) {
@@ -22,7 +20,7 @@ public class ResultStoreActor extends AbstractActor {
                             store.get(unitApply.getPackageId()).put(unitApply.getTestName(), unitApply.getResult());
                         }
                 )
-                .match(String.class, id -> sender().tell(printId(id), self()))
+                .match(MessageObject.class, m -> sender().tell(store.get(m.getPackageId()), self()))
                 .build();
     }
 

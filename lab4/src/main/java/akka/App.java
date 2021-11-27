@@ -29,12 +29,11 @@ public class App {
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
-                    Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
+                    Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(packageId), TIMEOUT_MILLIS);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(ResultStoreFunction.class), message -> {
                     ArrayList<UnitTest> tests = UnitTest.funcHandler(message);
-                    System.out.println("tests: " + tests);
                     for (UnitTest test : tests) {
                         testExecutionActor.tell(test, resultStoreActor);
                     }
