@@ -24,11 +24,12 @@ public class App {
     private final static String SERVER_HOST = "localhost";
     private final static int NR_VALUE = 5;
     private final static String QUERY_NAME = "packageId";
+    private final static int TIMEOUT_MILLIS = 5000;
 
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
         return concat(path("test", () -> route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
-                    Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(Integer.parseInt(packageId)), 5000);
+                    Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(ResultStoreFunction.class), message -> {
