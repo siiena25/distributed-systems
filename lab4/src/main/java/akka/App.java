@@ -46,7 +46,7 @@ public class App {
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create();
         ActorRef resultStoreActor = system.actorOf(Props.create(ResultStoreActor.class));
-        ActorRef testExecutionActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestExecutionActor.class)));
+        ActorRef testExecutionActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, actorMaterializer);

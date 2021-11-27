@@ -8,7 +8,7 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
-public class TestExecutionActor extends AbstractActor {
+public class TestActor extends AbstractActor {
     private final static String OK_RESULT = "OK";
     private final static String FAIL_RESULT = "FAIL";
     private final static String SCRIPT_NAME = "nashorn";

@@ -23,8 +23,4 @@ public class ResultStoreActor extends AbstractActor {
                 .match(MessageObject.class, m -> sender().tell(store.get(m.getPackageId()), self()))
                 .build();
     }
-
-    private OutputResult printId(String id) {
-        return new OutputResult(id, store.get(id));
-    }
 }
