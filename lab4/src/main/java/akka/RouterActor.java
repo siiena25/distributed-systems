@@ -7,7 +7,9 @@ public class RouterActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder().match(
                 ResultStoreFunction.class,
-                
+                msg -> {
+                    
+                }
         );
     }
 }
