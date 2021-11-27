@@ -7,6 +7,8 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class TestExecutionActor extends AbstractActor {
+    private final static String OK_RESULT = "OK";
+    private final static String FAIL_RESULT = "FAIL";
     @Override
     public Receive createReceive() {
         return receiveBuilder().match(
@@ -19,7 +21,7 @@ public class TestExecutionActor extends AbstractActor {
                             item.getFunctionTitle(),
                             item.getParams().toArray()
                     ).toString();
-                    String answer = (result.equals(item.getResult())) ? "success" : "fail";
+                    String answer = (result.equals(item.getResult())) ? OK_RESULT : FAIL_RESULT;
                     System.out.println("Expected result: " + item.getResult());
                     System.out.println("Received result: " + result);
                     System.out.println("Answer: " + answer);
