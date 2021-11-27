@@ -26,17 +26,14 @@ public class App {
     private final static String QUERY_NAME = "packageId";
     private final static int TIMEOUT_MILLIS = 5000;
 
-    public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
+    public static Route createRoute(ActorRef messageStoreActor, ActorRef testActor) {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
-                    Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(packageId), TIMEOUT_MILLIS);
+                    Future<Object> res = Patterns.ask(messageStoreActor, new MessageObject(packageId), TIMEOUT_MILLIS);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(MessageTests.class), message -> {
-                    ArrayList<UnitTest> tests = UnitTest.funcHandler(message);
-                    for (UnitTest test : tests) {
-                        testExecutionActor.tell(test, resultStoreActor);
-                    }
+                    testActor.tell(message, messageStoreActor);
                     return complete("OK");
                 }))
 
@@ -45,11 +42,11 @@ public class App {
 
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create();
-        ActorRef resultStoreActor = system.actorOf(Props.create(MessageStoreActor.class));
-        ActorRef testExecutionActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
+        ActorRef messageStoreActor = system.actorOf(Props.create(MessageStoreActor.class));
+        ActorRef testActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, actorMaterializer);
+        final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(messageStoreActor, testActor).flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost(SERVER_HOST, SERVER_PORT);
         http.bindAndHandle(handler, connect, actorMaterializer);
     }
