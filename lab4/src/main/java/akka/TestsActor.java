@@ -12,9 +12,11 @@ public class TestsActor extends AbstractActor {
                 MessageTests.class,
                 msg -> {
                     for (Test test : msg.getTests()) {
-                        testPerformer.tell(new MessageTest(msg.getPackageId(), msg.getScript(), msg.getFunctionTitle(), test), self());
+                        testPerformer.tell(new MessageTest(
+                                msg.getPackageId(), msg.getScript(), msg.getFunctionTitle(), test), self()
+                        );
                     }
                 }
-        );
+        ).build();
     }
 }
