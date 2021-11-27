@@ -27,7 +27,7 @@ public class App {
 
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
         return route(
-                get(() -> parameter(QUERY_NAME, key -> {
+                get(() -> parameter(QUERY_NAME, packageId -> {
                     Future<Object> res = Patterns.ask(resultStoreActor, key, 5000);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
