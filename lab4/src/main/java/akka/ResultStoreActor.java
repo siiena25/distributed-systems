@@ -14,13 +14,13 @@ public class ResultStoreActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder().match(
                         FunctionResult.class,
-                        unitApply -> {
-                            if (!store.containsKey(unitApply.getPackageId())) {
-                                store.put(unitApply.getPackageId(), new HashMap<>());
+                        msg -> {
+                            if (!store.containsKey(msg.getPackageId())) {
+                                store.put(msg.getPackageId(), new HashMap<>());
                             } else {
-                                ArrayList<Test> tests = 
+                                ArrayList<Test> tests = store.get(msg.getPackageId())
                             }
-                            store.get(unitApply.getPackageId()).put(unitApply.getTestName(), unitApply.getResult());
+                            store.get(msg.getPackageId()).put(msg.getTestName(), msg.getResult());
                         }
                 )
                 .match(MessageObject.class, m -> sender().tell(store.get(m.getPackageId()), self()))
