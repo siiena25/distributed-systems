@@ -10,12 +10,13 @@ import javax.script.ScriptEngineManager;
 public class TestExecutionActor extends AbstractActor {
     private final static String OK_RESULT = "OK";
     private final static String FAIL_RESULT = "FAIL";
+    private final static String SCRIPT_NAME = "nashorn";
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create().match(
                 UnitTest.class,
                 item -> {
-                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+                    ScriptEngine engine = new ScriptEngineManager().getEngineByName(SCRIPT_NAME);
                     engine.eval(item.getScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(
