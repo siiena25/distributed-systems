@@ -32,7 +32,7 @@ public class App {
                     Future<Object> res = Patterns.ask(resultStoreActor, new MessageObject(packageId), TIMEOUT_MILLIS);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
-                post(() -> entity(Jackson.unmarshaller(ResultStoreFunction.class), message -> {
+                post(() -> entity(Jackson.unmarshaller(MessageTests.class), message -> {
                     ArrayList<UnitTest> tests = UnitTest.funcHandler(message);
                     for (UnitTest test : tests) {
                         testExecutionActor.tell(test, resultStoreActor);

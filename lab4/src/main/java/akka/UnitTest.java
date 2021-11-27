@@ -44,7 +44,7 @@ public class UnitTest {
         return params;
     }
 
-    public static ArrayList<UnitTest> funcHandler(ResultStoreFunction function) {
+    public static ArrayList<UnitTest> funcHandler(MessageTests function) {
         return function.getTests().stream().map(test -> new UnitTest(
                 function.getPackageId(),
                 function.getScript(),

@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
-public class ResultStoreFunction {
+public class MessageTests {
     private final String packageId;
     private final String script;
     private final String functionTitle;
     private final ArrayList<Test> tests;
 
     @JsonCreator
-    public ResultStoreFunction(
+    public MessageTests(
             @JsonProperty("packageId") String packageId,
             @JsonProperty("jsScript") String script,
             @JsonProperty("functionName") String functionTitle,
