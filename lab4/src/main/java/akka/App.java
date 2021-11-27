@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
@@ -16,6 +17,7 @@ import akka.stream.javadsl.Flow;
 import scala.concurrent.Future;
 
 import java.util.ArrayList;
+import java.util.concurrent.CompletionStage;
 
 import static akka.http.javadsl.server.Directives.*;
 
@@ -45,6 +47,7 @@ public class App {
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost("localhost", 8080);
-        http.bindAndHandle(handler, connect, actorMaterializer);
+        final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(handler, connect, actorMaterializer);
+        
     }
 }
