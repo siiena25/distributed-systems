@@ -7,24 +7,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MessageStoreActor extends AbstractActor {
-    final Map<String, ArrayList<Test>> store = new HashMap<>();
+    final Map<String, ArrayList<Test>> messageStore = new HashMap<>();
 
     @Override
     public Receive createReceive() {
         return receiveBuilder().match(
                         MessageStore.class,
                         msg -> {
-                            if (!store.containsKey(msg.getPackageId())) {
-                                store.put(msg.getPackageId(), msg.getTests());
+                            if (!messageStore.containsKey(msg.getPackageId())) {
+                                messageStore.put(msg.getPackageId(), msg.getTests());
                             } else {
-                                ArrayList<Test> tests = store.get(msg.getPackageId());
+                                ArrayList<Test> tests = messageStore.get(msg.getPackageId());
                                 tests.addAll(msg.getTests());
-
+                                messageStore.replace(msg.getPackageId(), tests);
                             }
-                            store.get(msg.getPackageId()).put(msg.getTestName(), msg.getResult());
                         }
                 )
-                .match(MessageObject.class, m -> sender().tell(store.get(m.getPackageId()), self()))
-                .build();
+                .match(MessageObject.class, s ->
+                        sender().tell(new MessageStore(s.getPackageId(), messageStore.get(s.getPackageId())), self())
+                ).build();
     }
 }
