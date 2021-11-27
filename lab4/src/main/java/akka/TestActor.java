@@ -20,7 +20,8 @@ public class TestActor extends AbstractActor {
         engine.eval(script);
         Invocable invocable = (Invocable) engine;
         String res = invocable.invokeFunction(functionTitle, params.toArray()).toString();
-        Test test = new Test(testName, result, params, result.equals(res));
+        Test test = new Test(testName, result, params);
+        test.setResult(result.equals(res));
     }
 
     @Override

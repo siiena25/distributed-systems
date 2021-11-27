@@ -9,17 +9,19 @@ import java.util.ArrayList;
 public class Test implements Serializable {
     private final String testName;
     private final String expectedResult;
-    private final ArrayList<Integer> params;
+    private final ArrayList<String> params;
+    private boolean result;
 
     @JsonCreator
     public Test(
             @JsonProperty("testName") String testName,
             @JsonProperty("expectedResult") String expectedResult,
-            @JsonProperty("params") ArrayList<Integer> params
+            @JsonProperty("params") ArrayList<String> params
     ) {
         this.testName = testName;
         this.expectedResult = expectedResult;
         this.params = params;
+        this.result = false;
     }
 
     public String getTestName() {
@@ -30,7 +32,11 @@ public class Test implements Serializable {
         return expectedResult;
     }
 
-    public ArrayList<Integer> getParams() {
+    public ArrayList<String> getParams() {
         return params;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
     }
 }
