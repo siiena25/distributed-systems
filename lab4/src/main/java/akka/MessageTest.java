@@ -34,7 +34,7 @@ public class MessageTest {
         return functionTitle;
     }
 
-    public Test getTests() {
+    public Test getTest() {
         return test;
     }
 }

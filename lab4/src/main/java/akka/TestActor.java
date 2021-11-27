@@ -32,9 +32,9 @@ public class TestActor extends AbstractActor {
                     tests.add(createTest(
                             item.getScript(),
                             item.getFunctionTitle(),
-                            item.getTestName(),
-                            item.getResult(),
-                            item.getParams()
+                            item.getTest().getTestName(),
+                            item.getTest().getExpectedResult(),
+                            item.getTest().getParams()
                     ));
                     sender().tell(new MessageStore(item.getPackageId(), tests), self());
                 }
