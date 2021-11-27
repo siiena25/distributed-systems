@@ -3,8 +3,6 @@ package akka;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-
 public class MessageTest {
     private final String packageId;
     private final String script;
