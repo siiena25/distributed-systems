@@ -1,25 +1,21 @@
 package akka;
 
+import java.util.ArrayList;
+
 public class FunctionResult {
     private final String packageId;
-    private final String testName;
-    private final String result;
+    private final ArrayList<Test> tests;
 
-    public FunctionResult(String packageId, String title, String result) {
+    public FunctionResult(String packageId, ArrayList<Test> tests) {
         this.packageId = packageId;
-        this.testName = title;
-        this.result = result;
+        this.tests = tests;
     }
 
     public String getPackageId() {
         return packageId;
     }
 
-    public String getTestName() {
-        return testName;
-    }
-
-    public String getResult() {
-        return result;
+    public ArrayList<Test> getTests() {
+        return tests;
     }
 }

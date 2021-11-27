@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ResultStoreActor extends AbstractActor {
-    final Map<Integer, ArrayList<Test>> store = new HashMap<>();
+    final Map<String, ArrayList<Test>> store = new HashMap<>();
 
     @Override
     public Receive createReceive() {
@@ -16,10 +16,10 @@ public class ResultStoreActor extends AbstractActor {
                         FunctionResult.class,
                         msg -> {
                             if (!store.containsKey(msg.getPackageId())) {
-                                store.put(msg.getPackageId(), msg.getTestName());
+                                store.put(msg.getPackageId(), msg.getTests());
                             } else {
                                 ArrayList<Test> tests = store.get(msg.getPackageId());
-                                tests.addAll(msg.getTestName());
+                                tests.addAll(msg.getTests());
 
                             }
                             store.get(msg.getPackageId()).put(msg.getTestName(), msg.getResult());
