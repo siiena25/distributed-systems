@@ -1,6 +1,7 @@
 package akka;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -31,7 +32,7 @@ public class TestExecutionActor extends AbstractActor {
                             item.getPackageId(),
                             item.getTestName(),
                             answer
-                    ), self());
+                    ), ActorRef.noSender());
                 }
         ).build();
     }
