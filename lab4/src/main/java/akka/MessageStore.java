@@ -2,11 +2,11 @@ package akka;
 
 import java.util.ArrayList;
 
-public class FunctionResult {
+public class MessageStore {
     private final String packageId;
     private final ArrayList<Test> tests;
 
-    public FunctionResult(String packageId, ArrayList<Test> tests) {
+    public MessageStore(String packageId, ArrayList<Test> tests) {
         this.packageId = packageId;
         this.tests = tests;
     }

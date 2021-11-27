@@ -1,7 +1,6 @@
 package akka;
 
 import akka.actor.AbstractActor;
-import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -28,7 +27,7 @@ public class TestActor extends AbstractActor {
                     System.out.println("Expected result: " + item.getResult());
                     System.out.println("Received result: " + result);
                     System.out.println("Answer: " + answer);
-                    sender().tell(new FunctionResult(
+                    sender().tell(new MessageStore(
                             item.getPackageId(),
                             item.getTestName(),
                             answer
