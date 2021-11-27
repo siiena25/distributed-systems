@@ -30,7 +30,7 @@ public class App {
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
-                    Future<Object> res = PatternsCS.ask(resultStoreActor, Integer.parseInt(packageId), 5000);
+                    Future<Object> res = PatternsCS.ask(resultStoreActor, packageId, 5000);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(ResultStoreFunction.class), message -> {
