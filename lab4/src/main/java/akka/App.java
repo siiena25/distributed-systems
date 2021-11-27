@@ -31,7 +31,7 @@ public class App {
                     for (UnitTest test : tests) {
                         testExecutionActor.tell(test, resultStoreActor);
                     }
-                    return complete("Success");
+                    return complete("OK");
                 }))
 
         );
