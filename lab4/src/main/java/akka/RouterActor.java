@@ -8,7 +8,9 @@ public class RouterActor extends AbstractActor {
         return receiveBuilder().match(
                 ResultStoreFunction.class,
                 msg -> {
-                    for (Test test : msg.getTests())
+                    for (Test test : msg.getTests()) {
+                        
+                    }
                 }
         );
     }
