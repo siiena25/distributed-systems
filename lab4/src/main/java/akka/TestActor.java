@@ -10,18 +10,17 @@ import javax.script.ScriptException;
 import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
-    private final static String OK_RESULT = "OK";
-    private final static String FAIL_RESULT = "FAIL";
     private final static String SCRIPT_NAME = "nashorn";
 
-    private ArrayList<Test> createTests(String script, String functionTitle, String testName,
-                                        String result, ArrayList<String> params) throws ScriptException, NoSuchMethodException {
+    private Test createTest(String script, String functionTitle, String testName,
+                                        String result, ArrayList<Integer> params) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(SCRIPT_NAME);
         engine.eval(script);
         Invocable invocable = (Invocable) engine;
         String res = invocable.invokeFunction(functionTitle, params.toArray()).toString();
         Test test = new Test(testName, result, params);
         test.setResult(result.equals(res));
+        return test;
     }
 
     @Override
@@ -29,16 +28,15 @@ public class TestActor extends AbstractActor {
         return ReceiveBuilder.create().match(
                 UnitTest.class,
                 item -> {
-                    String answer = (result.equals(item.getResult())) ? OK_RESULT : FAIL_RESULT;
-                    System.out.println("Expected result: " + item.getResult());
-                    System.out.println("Received result: " + result);
-                    System.out.println("Answer: " + answer);
-                    sender().tell(new MessageStore(
-                            item.getPackageId(),
-                            createTests(
-
-                            )
-                    ), self());
+                    ArrayList<Test> tests = new ArrayList<>();
+                    tests.add(createTest(
+                            item.getScript(),
+                            item.getFunctionTitle(),
+                            item.getTestName(),
+                            item.getResult(),
+                            item.getParams()
+                    ));
+                    sender().tell(new MessageStore(item.getPackageId(), tests), self());
                 }
         ).build();
     }
