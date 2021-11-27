@@ -1,7 +1,6 @@
 package akka;
 
 import akka.actor.AbstractActor;
-import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -12,10 +11,10 @@ public class TestExecutionActor extends AbstractActor {
     private final static String FAIL_RESULT = "FAIL";
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create().match(
+        return receiveBuilder().match(
                 UnitTest.class,
                 item -> {
-                    /*ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     engine.eval(item.getScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(
@@ -30,8 +29,7 @@ public class TestExecutionActor extends AbstractActor {
                             item.getPackageId(),
                             item.getTestName(),
                             answer
-                    ), self());*/
-                    
+                    ), self());
                 }
         ).build();
     }
