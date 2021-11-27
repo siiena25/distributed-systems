@@ -3,8 +3,8 @@ package akka;
 import akka.actor.AbstractActor;
 import akka.actor.ActorSelection;
 
-public class RouterActor extends AbstractActor {
-    private ActorSelection testPerformer = getContext().actorSelection("/testPerformer");
+public class TestsActor extends AbstractActor {
+    private final ActorSelection testPerformer = getContext().actorSelection("/testPerformer");
 
     @Override
     public Receive createReceive() {
