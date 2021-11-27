@@ -23,10 +23,11 @@ public class App {
     private final static int SERVER_PORT = 8080;
     private final static String SERVER_HOST = "localhost";
     private final static int NR_VALUE = 5;
+    private final static String QUERY_NAME = "packageId";
 
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
         return route(
-                get(() -> parameter("packageId", key -> {
+                get(() -> parameter(QUERY_NAME, key -> {
                     Future<Object> res = Patterns.ask(resultStoreActor, key, 5000);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
