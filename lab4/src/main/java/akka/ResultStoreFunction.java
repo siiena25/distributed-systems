@@ -9,19 +9,19 @@ public class ResultStoreFunction {
     private final String packageId;
     private final String script;
     private final String functionTitle;
-    private final Test test;
+    private final ArrayList<Test> tests;
 
     @JsonCreator
     public ResultStoreFunction(
             @JsonProperty("packageId") String packageId,
             @JsonProperty("jsScript") String script,
             @JsonProperty("functionName") String functionTitle,
-            @JsonProperty("tests") Test test
+            @JsonProperty("tests") ArrayList<Test> tests
     ) {
         this.packageId = packageId;
         this.script = script;
         this.functionTitle = functionTitle;
-        this.test = test;
+        this.tests = tests;
     }
 
     public String getPackageId() {
@@ -36,7 +36,7 @@ public class ResultStoreFunction {
         return functionTitle;
     }
 
-    public Test getTest() {
-        return test;
+    public ArrayList<Test> getTests() {
+        return tests;
     }
 }
