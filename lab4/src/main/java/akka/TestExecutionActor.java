@@ -15,7 +15,7 @@ public class TestExecutionActor extends AbstractActor {
         return ReceiveBuilder.create().match(
                 UnitTest.class,
                 item -> {
-                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+                    /*ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     engine.eval(item.getScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(
@@ -30,7 +30,8 @@ public class TestExecutionActor extends AbstractActor {
                             item.getPackageId(),
                             item.getTestName(),
                             answer
-                    ), self());
+                    ), self());*/
+                    
                 }
         ).build();
     }
