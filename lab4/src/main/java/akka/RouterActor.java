@@ -12,7 +12,7 @@ public class RouterActor extends AbstractActor {
                 ResultStoreFunction.class,
                 msg -> {
                     for (Test test : msg.getTests()) {
-                        testPerformer.
+                        testPerformer.tell(new );
                     }
                 }
         );
