@@ -32,6 +32,7 @@ public class App {
                 })),
                 post(() -> entity(Jackson.unmarshaller(ResultStoreFunction.class), message -> {
                     ArrayList<UnitTest> tests = UnitTest.funcHandler(message);
+                    System.out.println("tests: " + tests)
                     for (UnitTest test : tests) {
                         testExecutionActor.tell(test, resultStoreActor);
                     }
