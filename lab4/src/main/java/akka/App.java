@@ -23,6 +23,7 @@ import java.util.concurrent.CompletionStage;
 import static akka.http.javadsl.server.Directives.*;
 
 public class App {
+    static 
     public static Route createRoute(ActorRef resultStoreActor, ActorRef testExecutionActor) {
         return route(
                 get(() -> parameter("packageId", key -> {
@@ -40,7 +41,7 @@ public class App {
         );
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         ActorSystem system = ActorSystem.create();
         ActorRef resultStoreActor = system.actorOf(Props.create(ResultStoreActor.class));
         ActorRef testExecutionActor = system.actorOf(new RoundRobinPool(5).props(Props.create(TestExecutionActor.class)));
@@ -51,3 +52,21 @@ public class App {
         http.bindAndHandle(handler, connect, actorMaterializer);
     }
 }
+
+/*
+{
+"packageId":"11",
+"jsScript":"var divideFn = function(a,b) { return a/b} ",
+"functionName":"divideFn",
+"tests": [
+{"testName":"test1",
+"expectedResult":"2.0",
+"params":[2,1]
+},
+{"testName":"test2",
+"expectedResult":"2.0",
+"params":[4,2]
+}
+]
+}
+ */
