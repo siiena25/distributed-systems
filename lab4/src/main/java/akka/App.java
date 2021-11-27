@@ -46,13 +46,9 @@ public class App {
         ActorRef resultStoreActor = system.actorOf(Props.create(ResultStoreActor.class), "resultStore");
         ActorRef testExecutionActor = system.actorOf(new RoundRobinPool(5).props(Props.create(TestExecutionActor.class)));
         Http http = Http.get(system);
-        Materializer materializer = ActorMaterializer.create(system);
-        Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, materializer);
+        ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
+        Flow<HttpRequest, HttpResponse, ?> handler = createRoute(resultStoreActor, testExecutionActor).flow(system, actorMaterializer);
         ConnectHttp connect = ConnectHttp.toHost("localhost", 8080);
-        CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(handler, connect, materializer);
-        System.out.println("Start..");
-        System.in.read();
-        bindingCompletionStage.thenCompose(ServerBinding::unbind).thenAccept(consumer -> system.terminate());
-
+        http.bindAndHandle(handler, connect, actorMaterializer);
     }
 }
