@@ -16,6 +16,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import scala.concurrent.Future;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.CompletionStage;
 
@@ -42,7 +43,7 @@ public class App {
         );
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create();
         ActorRef messageStoreActor = system.actorOf(Props.create(MessageStoreActor.class));
         ActorRef testActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
@@ -52,6 +53,7 @@ public class App {
         final ConnectHttp connect = ConnectHttp.toHost(SERVER_HOST, SERVER_PORT);
         final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(handler, connect, actorMaterializer);
         System.out.println("Start...");
+        System.in.read();
         serverBinding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
 }
