@@ -28,7 +28,7 @@ public class App {
     private final static String QUERY_NAME = "packageId";
     private final static int TIMEOUT_MILLIS = 5000;
 
-    public static Route createRoute(ActorRef messageStoreActor, ActorRef testsActor) {
+    public static Route createRoute(ActorRef messageStoreActor, ActorRef testActor) {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
                     Future<Object> res = Patterns.ask(messageStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
@@ -37,7 +37,7 @@ public class App {
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(MessageTests.class), message -> {
-                    testsActor.tell(message, ActorRef.noSender());
+                    testActor.tell(message, ActorRef.noSender());
                     return complete("Test complete");
                 }))
 
@@ -51,7 +51,7 @@ public class App {
         ActorRef testActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(messageStoreActor, testsActor).flow(system, actorMaterializer);
+        final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(messageStoreActor, testActor).flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost(SERVER_HOST, SERVER_PORT);
         final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(handler, connect, actorMaterializer);
         System.out.println("Start...");
