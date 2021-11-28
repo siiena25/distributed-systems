@@ -33,7 +33,7 @@ public class App {
     public static Route createRoute(ActorRef messageStoreActor, ActorRef testsActor) {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
-                    CompletionStage<Object> res = PatternsCS.ask(messageStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
+                    Future<Object> res = Patterns.ask(messageStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
                     System.out.println("res: " + res);
                     System.out.println("packageId: " + packageId);
                     return completeOKWithFuture(res, Jackson.marshaller());
