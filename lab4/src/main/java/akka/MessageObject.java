@@ -1,13 +1,13 @@
 package akka;
 
 public class MessageObject {
-    private final String packageId;
+    private final Integer packageId;
 
-    public MessageObject(String packageId) {
+    public MessageObject(Integer packageId) {
         this.packageId = packageId;
     }
 
-    public String getPackageId() {
+    public Integer getPackageId() {
         return packageId;
     }
 }
