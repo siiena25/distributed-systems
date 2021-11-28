@@ -15,7 +15,6 @@ public class TestsActor extends AbstractActor {
         return ReceiveBuilder.create().match(
                 MessageTests.class,
                 msg -> {
-                    System.out.println("receive tests: " + msg.getTests());
                     for (Test test : msg.getTests()) {
                         testPerformRouter.tell(new MessageTest(
                                 msg.getPackageId(), msg.getScript(), msg.getFunctionTitle(), test), self()
