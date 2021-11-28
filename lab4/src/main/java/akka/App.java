@@ -43,8 +43,6 @@ public class App {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
                     Future<Object> res = Patterns.ask(messageStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
-                    System.out.println("res: " + res);
-                    System.out.println("packageId: " + packageId);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(MessageTests.class), message -> {
@@ -68,10 +66,7 @@ public class App {
         final App app = new App(system);
         final Flow<HttpRequest, HttpResponse, ?> routeFlow = app.createRoute().flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost(SERVER_HOST, SERVER_PORT);
-        final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(routeFlow, connect, actorMaterializer);
-        System.out.println("Start...");
-        System.in.read();
-        serverBinding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        http.bindAndHandle(routeFlow, connect, actorMaterializer);
     }
 }
 
