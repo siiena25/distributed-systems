@@ -34,6 +34,8 @@ public class App {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
                     CompletionStage<Object> res = PatternsCS.ask(messageStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
+                    System.out.println("res: " + res);
+                    System.out.println("packageId: " + packageId);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(MessageTests.class), message -> {
