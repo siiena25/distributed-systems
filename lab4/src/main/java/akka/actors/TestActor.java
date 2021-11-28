@@ -41,6 +41,7 @@ public class TestActor extends AbstractActor {
                             item.getTest().getExpectedResult(),
                             item.getTest().getParams()
                     ));
+                    System.out.println("msg store: " + messageStore);
                     messageStore.tell(
                             new MessageStore(item.getPackageId(), tests), self()
                     );
