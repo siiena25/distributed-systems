@@ -7,9 +7,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Test implements Serializable {
+    @JsonProperty("testName")
     private final String testName;
+
+    @JsonProperty("expectedResult")
     private final String expectedResult;
+
+    @JsonProperty("params")
     private final ArrayList<Integer> params;
+
+    @JsonProperty("result")
     private boolean result;
 
     @JsonCreator
