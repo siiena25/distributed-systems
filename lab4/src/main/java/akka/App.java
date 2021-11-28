@@ -33,6 +33,10 @@ public class App {
     private final static String QUERY_NAME = "packageId";
     private final static int TIMEOUT_MILLIS = 5000;
 
+    private ActorRef messageStoreActor;
+    private ActorRef testsActor;
+    private ActorRef testActor;
+
     public static Route createRoute(ActorRef messageStoreActor, ActorRef testsActor) {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
@@ -49,14 +53,18 @@ public class App {
         );
     }
 
+    private App(final ActorSystem system) {
+        messageStoreActor = system.actorOf(Props.create(MessageStoreActor.class));
+        testsActor = system.actorOf(Props.create(TestsActor.class));
+        testActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
+    }
+
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create();
-        ActorRef messageStoreActor = system.actorOf(Props.create(MessageStoreActor.class));
-        ActorRef testsActor = system.actorOf(Props.create(TestsActor.class));
-        ActorRef testActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse, ?> handler = createRoute(messageStoreActor, testsActor).flow(system, actorMaterializer);
+        final App app = new App(system);
+        final Flow<HttpRequest, HttpResponse, ?> handler = app.createRoute(messageStoreActor, testsActor).flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost(SERVER_HOST, SERVER_PORT);
         final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(handler, connect, actorMaterializer);
         System.out.println("Start...");
