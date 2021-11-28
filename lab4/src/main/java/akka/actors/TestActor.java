@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String SCRIPT_NAME = "nashorn";
-    private final ActorSelection messageStore = getContext().actorSelection("/messageStore");
+    private final ActorSelection messageStore = getContext().actorSelection("/user/messageStoreActor");
 
     private Test createTest(String script, String functionTitle, String testName,
                             String expectedResult, ArrayList<Integer> params) throws ScriptException, NoSuchMethodException {

@@ -8,7 +8,7 @@ import akka.models.MessageTests;
 import akka.models.Test;
 
 public class TestsActor extends AbstractActor {
-    private final ActorSelection testPerformRouter = getContext().actorSelection("/messageStore");
+    private final ActorSelection testPerformRouter = getContext().actorSelection("/user/messageStore");
 
     @Override
     public Receive createReceive() {
