@@ -33,9 +33,9 @@ public class App {
     private final static String QUERY_NAME = "packageId";
     private final static int TIMEOUT_MILLIS = 5000;
 
-    private ActorRef messageStoreActor;
-    private ActorRef testsActor;
-    private ActorRef testActor;
+    private final ActorRef messageStoreActor;
+    private final ActorRef testsActor;
+    private final ActorRef testActor;
 
     public Route createRoute() {
         return route(
