@@ -37,7 +37,7 @@ public class App {
     private ActorRef testsActor;
     private ActorRef testActor;
 
-    public static Route createRoute(ActorRef messageStoreActor, ActorRef testsActor) {
+    public Route createRoute() {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
                     Future<Object> res = Patterns.ask(messageStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
@@ -64,7 +64,7 @@ public class App {
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
         final App app = new App(system);
-        final Flow<HttpRequest, HttpResponse, ?> handler = app.createRoute(messageStoreActor, testsActor).flow(system, actorMaterializer);
+        final Flow<HttpRequest, HttpResponse, ?> handler = app.createRoute().flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost(SERVER_HOST, SERVER_PORT);
         final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(handler, connect, actorMaterializer);
         System.out.println("Start...");
