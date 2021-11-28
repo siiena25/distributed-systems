@@ -43,7 +43,7 @@ public class App {
                 })),
                 post(() -> entity(Jackson.unmarshaller(MessageTests.class), message -> {
                     testsActor.tell(message, ActorRef.noSender());
-                    return complete("Test complete");
+                    return complete("Test successfully send");
                 }))
 
         );
