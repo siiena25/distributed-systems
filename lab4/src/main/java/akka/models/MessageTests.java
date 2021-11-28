@@ -13,7 +13,7 @@ public class MessageTests {
 
     @JsonCreator
     public MessageTests(
-            @JsonProperty("packageId") Integer packageId,
+            @JsonProperty("packageId") int packageId,
             @JsonProperty("jsScript") String script,
             @JsonProperty("functionName") String functionTitle,
             @JsonProperty("tests") ArrayList<Test> tests
