@@ -1,6 +1,7 @@
 package akka;
 
 import akka.actor.AbstractActor;
+import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +12,7 @@ public class MessageStoreActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return receiveBuilder().match(
+        return ReceiveBuilder.create().match(
                         MessageStore.class,
                         msg -> {
                             if (!messageStore.containsKey(msg.getPackageId())) {
