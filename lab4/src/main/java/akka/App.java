@@ -64,9 +64,9 @@ public class App {
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
         final App app = new App(system);
-        final Flow<HttpRequest, HttpResponse, ?> handler = app.createRoute().flow(system, actorMaterializer);
+        final Flow<HttpRequest, HttpResponse, ?> routeFlow = app.createRoute().flow(system, actorMaterializer);
         final ConnectHttp connect = ConnectHttp.toHost(SERVER_HOST, SERVER_PORT);
-        final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(handler, connect, actorMaterializer);
+        final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(routeFlow, connect, actorMaterializer);
         System.out.println("Start...");
         System.in.read();
         serverBinding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
