@@ -54,13 +54,13 @@ public class App {
     }
 
     private App(final ActorSystem system) {
-        messageStoreActor = system.actorOf(Props.create(MessageStoreActor.class));
-        testsActor = system.actorOf(Props.create(TestsActor.class));
-        testActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)));
+        messageStoreActor = system.actorOf(Props.create(MessageStoreActor.class), "messageStoreActor");
+        testsActor = system.actorOf(Props.create(TestsActor.class), "testsActor");
+        testActor = system.actorOf(new RoundRobinPool(NR_VALUE).props(Props.create(TestActor.class)), "testActor");
     }
 
     public static void main(String[] args) throws IOException {
-        ActorSystem system = ActorSystem.create();
+        ActorSystem system = ActorSystem.create("lab4");
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
         final App app = new App(system);
