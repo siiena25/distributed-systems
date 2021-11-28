@@ -34,7 +34,7 @@ public class App {
         return route(
                 get(() -> parameter(QUERY_NAME, packageId -> {
                     Future<Object> res = Patterns.ask(messageStoreActor, new MessageObject(Integer.parseInt(packageId)), TIMEOUT_MILLIS);
-                    System.out.println("res: " + res.value());
+                    System.out.println("res: " + res);
                     System.out.println("packageId: " + packageId);
                     return completeOKWithFuture(res, Jackson.marshaller());
                 })),
