@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MessageStoreActor extends AbstractActor {
-    final Map<String, ArrayList<Test>> messageStore = new HashMap<>();
+    final Map<Integer, ArrayList<Test>> messageStore = new HashMap<>();
 
     @Override
     public Receive createReceive() {

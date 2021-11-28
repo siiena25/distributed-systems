@@ -3,15 +3,15 @@ package akka;
 import java.util.ArrayList;
 
 public class MessageStore {
-    private final String packageId;
+    private final Integer packageId;
     private final ArrayList<Test> tests;
 
-    public MessageStore(String packageId, ArrayList<Test> tests) {
+    public MessageStore(Integer packageId, ArrayList<Test> tests) {
         this.packageId = packageId;
         this.tests = tests;
     }
 
-    public String getPackageId() {
+    public Integer getPackageId() {
         return packageId;
     }
 
