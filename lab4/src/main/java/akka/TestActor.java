@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String SCRIPT_NAME = "nashorn";
-    private ActorSelection messageStore = getContext().actorSelection("/messageStore");
+    private final ActorSelection messageStore = getContext().actorSelection("/messageStore");
 
     private Test createTest(String script, String functionTitle, String testName,
                             String expectedResult, ArrayList<Integer> params) throws ScriptException, NoSuchMethodException {
