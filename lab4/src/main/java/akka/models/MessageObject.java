@@ -1,4 +1,4 @@
-package akka;
+package akka.models;
 
 public class MessageObject {
     private final Integer packageId;

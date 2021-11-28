@@ -1,7 +1,10 @@
-package akka;
+package akka.actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import akka.models.MessageObject;
+import akka.models.MessageStore;
+import akka.models.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;

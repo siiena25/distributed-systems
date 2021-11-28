@@ -1,8 +1,11 @@
-package akka;
+package akka.actors;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorSelection;
 import akka.japi.pf.ReceiveBuilder;
+import akka.models.MessageStore;
+import akka.models.MessageTest;
+import akka.models.Test;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
