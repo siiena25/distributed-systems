@@ -4,7 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorSelection;
 
 public class TestsActor extends AbstractActor {
-    private final ActorSelection testPerformer = getContext().actorSelection("/messageStore");
+    private final ActorSelection testPerformRouter = getContext().actorSelection("/messageStore");
 
     @Override
     public Receive createReceive() {
@@ -12,7 +12,7 @@ public class TestsActor extends AbstractActor {
                 MessageTests.class,
                 msg -> {
                     for (Test test : msg.getTests()) {
-                        testPerformer.tell(new MessageTest(
+                        testPerformRouter.tell(new MessageTest(
                                 msg.getPackageId(), msg.getScript(), msg.getFunctionTitle(), test), self()
                         );
                     }
