@@ -1,6 +1,7 @@
 package akka.actors;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.actor.ActorSelection;
 import akka.japi.pf.ReceiveBuilder;
 import akka.models.MessageStore;
@@ -42,9 +43,7 @@ public class TestActor extends AbstractActor {
                             item.getTest().getParams()
                     ));
                     System.out.println("msg store: " + messageStore);
-                    messageStore.tell(
-                            new MessageStore(item.getPackageId(), tests), self()
-                    );
+                    messageStore.tell(new MessageStore(item.getPackageId(), tests), ActorRef.noSender());
                 }
         ).build();
     }
