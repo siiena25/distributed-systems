@@ -22,6 +22,7 @@ public class MessageStoreActor extends AbstractActor {
                                 tests.addAll(msg.getTests());
                                 messageStore.replace(msg.getPackageId(), tests);
                             }
+                            System.out.println("message store: " + messageStore);
                         }
                 )
                 .match(MessageObject.class, s ->
