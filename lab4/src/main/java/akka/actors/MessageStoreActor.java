@@ -18,6 +18,7 @@ public class MessageStoreActor extends AbstractActor {
         return ReceiveBuilder.create().match(
                         MessageStore.class,
                         msg -> {
+                            System.out.println("message: " + msg);
                             if (!messageStore.containsKey(msg.getPackageId())) {
                                 messageStore.put(msg.getPackageId(), msg.getTests());
                             } else {
@@ -25,7 +26,6 @@ public class MessageStoreActor extends AbstractActor {
                                 tests.addAll(msg.getTests());
                                 messageStore.replace(msg.getPackageId(), tests);
                             }
-                            System.out.println("message store: " + messageStore);
                         }
                 )
                 .match(MessageObject.class, s ->
