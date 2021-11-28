@@ -4,7 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorSelection;
 
 public class TestsActor extends AbstractActor {
-    private final ActorSelection testPerformer = getContext().actorSelection("/testPerformer");
+    private final ActorSelection testPerformer = getContext().actorSelection("/messageStore");
 
     @Override
     public Receive createReceive() {

@@ -1,6 +1,7 @@
 package akka;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorSelection;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -11,15 +12,16 @@ import java.util.ArrayList;
 
 public class TestActor extends AbstractActor {
     private final static String SCRIPT_NAME = "nashorn";
+    private ActorSelection messageStore = getContext().actorSelection("/messageStore");
 
     private Test createTest(String script, String functionTitle, String testName,
-                                        String result, ArrayList<Integer> params) throws ScriptException, NoSuchMethodException {
+                            String expectedResult, ArrayList<Integer> params) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(SCRIPT_NAME);
         engine.eval(script);
         Invocable invocable = (Invocable) engine;
         String res = invocable.invokeFunction(functionTitle, params.toArray()).toString();
-        Test test = new Test(testName, result, params);
-        test.setResult(result.equals(res));
+        Test test = new Test(testName, expectedResult, params);
+        test.setResult(expectedResult.equals(res));
         return test;
     }
 
@@ -36,7 +38,9 @@ public class TestActor extends AbstractActor {
                             item.getTest().getExpectedResult(),
                             item.getTest().getParams()
                     ));
-                    sender().tell(new MessageStore(item.getPackageId(), tests), self());
+                    messageStore.tell(
+                            new MessageStore(item.getPackageId(), tests), self()
+                    );
                 }
         ).build();
     }
