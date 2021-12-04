@@ -35,6 +35,7 @@ public class FlowCreator {
                 if (res.isPresent()) {
                     TestResult result = res.get();
                     float time = result.getAverageRequestTime();
+                    System.out.println("Average time: " + time);
                 }
             })
         })
