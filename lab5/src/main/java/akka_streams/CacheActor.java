@@ -13,6 +13,11 @@ public class CacheActor extends AbstractActor {
         return receiveBuilder().match(
                 TestResult.class,
                 testResult -> cache.put(new Pair<>(TestResult.getUrl(), TestResult.getRequestsCount()), testResult)
+        ).match(
+                TestResultParams.class,
+                testResultParams -> {
+
+                }
         )
     }
 }
