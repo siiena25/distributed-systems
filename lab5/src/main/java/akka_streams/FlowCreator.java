@@ -52,7 +52,9 @@ public class FlowCreator {
                 }
                 Sink<Pair<String, Integer>, CompletionStage<Long>> sink = createSink();
                 return Source.from(Collections.singletonList(request)).toMat(sink, Keep.right()).run(materializer);
-            })
+            });
+        }).map(param -> {
+            
         })
     }
 
