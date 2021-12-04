@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
+import akka.japi.Pair;
 import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 
@@ -18,12 +19,14 @@ public class FlowCreator {
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> create() {
-        Flow.of(HttpRequest.class).map(param -> {
-            Query query = param.getUri().query();
-            String url = query.getOrElse("testUrl", "");
-            Integer count = query.get("count").map(Integer::parseInt).orElse(1);
-            Pair <
-                }
-        )
+        Flow.of(HttpRequest.class)
+                .map(param -> {
+                    Query query = param.getUri().query();
+                    String url = query.getOrElse("testUrl", "");
+                    Integer count = query.get("count").map(Integer::parseInt).orElse(1);
+                    Pair<String, Integer> pair = new Pair<>(url, count);
+                    return pair;
+                })
+                .mapAsync()
     }
 }
