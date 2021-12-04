@@ -53,7 +53,7 @@ public class FlowCreator {
         return Flow.<Pair<String, Integer>>create().mapConcat( param -> {
             ArrayList<Pair<String, Integer>> list =
                     IntStream.range(0, param.second()).mapToObj(i -> param).collect(Collectors.toCollection(ArrayList::new));
-            
+            return list;
         })
     }
 }
