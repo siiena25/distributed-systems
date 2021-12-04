@@ -49,7 +49,7 @@ public class FlowCreator {
                     return CompletableFuture.completedFuture(time);
                 }
                 Sink<Pair<String, Integer>, CompletionStage<Long>> sink = createSink();
-                
+                return Source.f
             })
         })
     }
