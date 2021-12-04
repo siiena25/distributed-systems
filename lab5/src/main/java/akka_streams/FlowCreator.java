@@ -17,6 +17,6 @@ public class FlowCreator {
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> create() {
-        Flow.of(HttpRequest.class)
+        Flow.of(HttpRequest.class).map()
     }
 }
