@@ -21,7 +21,8 @@ public class FlowCreator {
         Flow.of(HttpRequest.class).map(param -> {
             Query query = param.getUri().query();
             String url = query.getOrElse("testUrl", "");
-            Integer count = query.get("count").map(Integer::parseInt).orElse()
+            Integer count = query.get("count").map(Integer::parseInt).orElse(1);
+            
                 }
         )
     }
