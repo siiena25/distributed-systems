@@ -41,3 +41,5 @@ public class App {
 //http://localhost:8080/?testUrl=https://www.google.com/&count=20
 
 //http://localhost:8080/?testUrl=http://rambler.ru&count=20
+
+//http://localhost:8080/?testUrl=https://vk.com/&count=20
