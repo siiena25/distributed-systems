@@ -33,7 +33,7 @@ public class FlowCreator {
             return Patterns.ask(cacheActor, msg, Duration.ofSeconds(5)).thenCompose(response -> {
                 Optional<TestResult> result = (Optional<TestResult>) response;
                 if (result.isPresent()) {
-                    
+                    TestResult result = 
                 }
             })
         })
