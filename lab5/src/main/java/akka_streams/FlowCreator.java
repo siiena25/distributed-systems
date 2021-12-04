@@ -32,7 +32,9 @@ public class FlowCreator {
             TestResultParams msg = new TestResultParams(request.first(), request.second());
             return Patterns.ask(cacheActor, msg, Duration.ofSeconds(5)).thenCompose(response -> {
                 Optional<TestResult> result = (Optional<TestResult>) response;
-                
+                if (result.isPresent()) {
+                    
+                }
             })
         })
     }
