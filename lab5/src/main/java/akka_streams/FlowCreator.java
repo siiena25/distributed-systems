@@ -50,7 +50,9 @@ public class FlowCreator {
     private Sink<Pair<String, Integer>, CompletionStage<Float>> createSink() {
         return Flow.<Pair<String, Integer>>create().mapConcat( param -> {
             ArrayList<Pair<String, Integer>> list = new ArrayList<>();
-            for (int i = 0; i < )
+            for (int i = 0; i < param.second(); i++) {
+                
+            }
         })
     }
 }
