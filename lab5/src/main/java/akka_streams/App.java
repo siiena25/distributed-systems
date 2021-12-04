@@ -3,6 +3,7 @@ package akka_streams;
 import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -20,7 +21,7 @@ public class App {
         ActorSystem system = ActorSystem.create("routes");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final ActorRef cacheActor = system.actorOf()
+        final ActorRef cacheActor = system.actorOf(Props.create())
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
