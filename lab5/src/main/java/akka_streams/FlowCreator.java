@@ -64,7 +64,8 @@ public class FlowCreator {
                 return CompletableFuture.completedFuture(new TestResult(param.first(), 1, time));
             });
         }).fold(new TestResult("", 0, 0), TestResult::add).map(param -> {
-            cacheActor.tell(param, );
+            cacheActor.tell(param, ActorRef.noSender());
+            
         })
     }
 }
