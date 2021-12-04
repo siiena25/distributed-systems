@@ -7,14 +7,16 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 
-public class FlowCreate {
+public class FlowCreator {
     private final ActorRef cacheActor;
     private final Materializer materializer;
 
-    public FlowCreate(ActorRef cacheActor, Materializer materializer) {
+    public FlowCreator(ActorRef cacheActor, Materializer materializer) {
         this.cacheActor = cacheActor;
         this.materializer = materializer;
     }
 
-    Flow<HttpRequest, HttpResponse, NotUsed> create()
+    Flow<HttpRequest, HttpResponse, NotUsed> create() {
+        
+    }
 }
