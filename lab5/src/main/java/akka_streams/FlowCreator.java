@@ -60,6 +60,7 @@ public class FlowCreator {
             long startTime = System.currentTimeMillis();
             return httpClient.prepareGet(param.first()).execute().toCompletableFuture().thenCompose(response -> {
                 long time = System.currentTimeMillis() - startTime;
+                System.out.println("Request time: " + time);
             })
         })
     }
