@@ -12,6 +12,7 @@ import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Sink;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -48,7 +49,7 @@ public class FlowCreator {
 
     private Sink<Pair<String, Integer>, CompletionStage<Float>> createSink() {
         return Flow.<Pair<String, Integer>>create().mapConcat( param -> {
-
+            ArrayList<Pair<String, Integer>> 
         })
     }
 }
