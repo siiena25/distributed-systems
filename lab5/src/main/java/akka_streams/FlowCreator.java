@@ -54,7 +54,7 @@ public class FlowCreator {
                 return Source.from(Collections.singletonList(request)).toMat(sink, Keep.right()).run(materializer);
             });
         }).map(param -> {
-            HttpResponse.create()
+            HttpResponse.create().withEntity()
         })
     }
 
