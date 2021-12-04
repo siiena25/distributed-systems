@@ -18,7 +18,7 @@ public class CacheActor extends AbstractActor {
                 TestResultParams.class,
                 testResultParams -> {
                     Pair<String, Integer> key = new Pair<>(testResultParams.getUrl(), testResultParams.getCount());
-                    Optional<TestResult> testResult = 
+                    Optional<TestResult> testResult = Optional.ofNullable(TestResult.g)
                 }
         )
     }
