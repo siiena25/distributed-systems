@@ -20,6 +20,8 @@ import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static org.asynchttpclient.Dsl.asyncHttpClient;
+
 public class FlowCreator {
     private final ActorRef cacheActor;
     private final Materializer materializer;
@@ -54,7 +56,7 @@ public class FlowCreator {
         return Flow.<Pair<String, Integer>>create().mapConcat( param ->
                 IntStream.range(0, param.second()).mapToObj(i -> param).collect(Collectors.toCollection(ArrayList::new))
         ).mapAsync(10, param -> {
-            AsyncHttpClient httpClient = 
+            AsyncHttpClient httpClient = asyncHttpClient();
         })
     }
 }
