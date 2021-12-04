@@ -52,6 +52,8 @@ public class FlowCreator {
     private Sink<Pair<String, Integer>, CompletionStage<Float>> createSink() {
         return Flow.<Pair<String, Integer>>create().mapConcat( param ->
                 IntStream.range(0, param.second()).mapToObj(i -> param).collect(Collectors.toCollection(ArrayList::new))
-        ).mapAsync()
+        ).mapAsync(10, param -> {
+            
+        })
     }
 }
