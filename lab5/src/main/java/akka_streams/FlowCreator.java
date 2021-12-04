@@ -14,6 +14,7 @@ import akka.stream.javadsl.Sink;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 public class FlowCreator {
     private final ActorRef cacheActor;
@@ -40,7 +41,7 @@ public class FlowCreator {
                     System.out.println("Average time: " + time);
                     return CompletableFuture.completedFuture(time);
                 }
-                Sink<Pair<String, Integer>> 
+                Sink<Pair<String, Integer>, CompletionStage<Float>>  
             })
         })
     }
