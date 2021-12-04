@@ -1,8 +1,11 @@
 package akka_streams;
 
+import akka.NotUsed;
 import akka.actor.ActorRef;
+import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.Materializer;
+import akka.stream.javadsl.Flow;
 
 public class FlowCreate {
     private final ActorRef cacheActor;
@@ -13,5 +16,5 @@ public class FlowCreate {
         this.materializer = materializer;
     }
 
-    Flow<HttpResponse,>
+    Flow<HttpRequest, HttpResponse, NotUsed> create()
 }
