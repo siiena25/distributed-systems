@@ -1,6 +1,7 @@
 package akka_streams;
 
 import akka.actor.ActorRef;
+import akka.http.javadsl.model.HttpResponse;
 import akka.stream.Materializer;
 
 public class FlowCreate {
@@ -12,5 +13,5 @@ public class FlowCreate {
         this.materializer = materializer;
     }
 
-    
+    Flow<HttpResponse,>
 }
