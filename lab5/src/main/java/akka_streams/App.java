@@ -20,7 +20,7 @@ public class App {
         ActorSystem system = ActorSystem.create("routes");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final 
+        final ActorRef cacheActor = 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
