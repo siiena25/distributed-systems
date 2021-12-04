@@ -34,7 +34,7 @@ public class FlowCreator {
                 Optional<TestResult> res = (Optional<TestResult>) response;
                 if (res.isPresent()) {
                     TestResult result = res.get();
-                    
+                    float time = result.getAverageRequestTime();
                 }
             })
         })
