@@ -62,7 +62,7 @@ public class FlowCreator {
                 long time = System.currentTimeMillis() - startTime;
                 System.out.println("Request time: " + time);
                 return CompletableFuture.completedFuture(new TestResult(param.first(), 1, time));
-            })
-        })
+            });
+        }).fold()
     }
 }
