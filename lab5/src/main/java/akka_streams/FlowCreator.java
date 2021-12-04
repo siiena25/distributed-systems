@@ -11,6 +11,7 @@ import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 
 import java.time.Duration;
+import java.util.Optional;
 
 public class FlowCreator {
     private final ActorRef cacheActor;
@@ -30,7 +31,8 @@ public class FlowCreator {
         }).mapAsync(10, request -> {
             TestResultParams msg = new TestResultParams(request.first(), request.second());
             return Patterns.ask(cacheActor, msg, Duration.ofSeconds(5)).thenCompose(response -> {
-                Optional<TestResult> result = 
+                Optional<TestResult> result = (Optional<TestResult>) response;
+                
             })
         })
     }
