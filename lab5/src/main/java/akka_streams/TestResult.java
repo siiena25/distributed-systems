@@ -3,10 +3,10 @@ package akka_streams;
 public class TestResult {
     private final String url;
     private final int requestsCount;
-    private final int requestsTime;
-    private final float averageRequestTime = -1;
+    private final long requestsTime;
+    private final long averageRequestTime = -1;
 
-    public TestResult(String url, int requestsCount, int requestsTime) {
+    public TestResult(String url, int requestsCount, long requestsTime) {
         this.url = url;
         this.requestsCount = requestsCount;
         this.requestsTime = requestsTime;
@@ -20,11 +20,11 @@ public class TestResult {
         return requestsCount;
     }
 
-    public int getRequestsTime() {
+    public long getRequestsTime() {
         return requestsTime;
     }
 
-    public float getAverageRequestTime() {
-        return Float.parseFloat(Integer.toString(requestsTime / requestsCount));
+    public long getAverageRequestTime() {
+        return requestsTime / requestsCount;
     }
 }
