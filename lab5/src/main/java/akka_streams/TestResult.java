@@ -1,2 +1,4 @@
-package akka_streams;public class TestResult {
+package akka_streams;
+
+public class TestResult {
 }
