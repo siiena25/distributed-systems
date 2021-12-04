@@ -9,6 +9,7 @@ import akka.japi.Pair;
 import akka.pattern.Patterns;
 import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import org.asynchttpclient.AsyncHttpClient;
 
@@ -66,6 +67,6 @@ public class FlowCreator {
         }).fold(new TestResult("", 0, 0), TestResult::add).map(param -> {
             cacheActor.tell(param, ActorRef.noSender());
             return param.getAverageRequestTime();
-        }).toMat()
+        }).toMat(Sink.head(), Keep.right());
     }
 }
