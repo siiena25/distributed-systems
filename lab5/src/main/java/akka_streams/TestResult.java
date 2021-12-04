@@ -27,4 +27,6 @@ public class TestResult {
     public long getAverageRequestTime() {
         return requestsTime / requestsCount;
     }
+
+    public TestResult
 }
