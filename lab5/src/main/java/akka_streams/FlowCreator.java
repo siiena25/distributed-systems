@@ -19,7 +19,7 @@ public class FlowCreator {
 
     Flow<HttpRequest, HttpResponse, NotUsed> create() {
         Flow.of(HttpRequest.class).map(param ->
-                Query query =
+                Query query = param.g
         )
     }
 }
