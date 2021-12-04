@@ -19,14 +19,12 @@ public class FlowCreator {
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> create() {
-        Flow.of(HttpRequest.class)
-                .map(param -> {
-                    Query query = param.getUri().query();
-                    String url = query.getOrElse("testUrl", "");
-                    Integer count = query.get("count").map(Integer::parseInt).orElse(1);
-                    Pair<String, Integer> pair = new Pair<>(url, count);
-                    return pair;
-                })
-                .mapAsync()
+        Flow.of(HttpRequest.class).map(param -> {
+            Query query = param.getUri().query();
+            String url = query.getOrElse("testUrl", "");
+            Integer count = query.get("count").map(Integer::parseInt).orElse(1);
+            Pair<String, Integer> pair = new Pair<>(url, count);
+            return pair;
+        }).mapAsync()
     }
 }
