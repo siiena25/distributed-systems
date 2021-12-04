@@ -11,10 +11,12 @@ import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
+import akka.stream.javadsl.Source;
 import org.asynchttpclient.AsyncHttpClient;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -49,7 +51,7 @@ public class FlowCreator {
                     return CompletableFuture.completedFuture(time);
                 }
                 Sink<Pair<String, Integer>, CompletionStage<Long>> sink = createSink();
-                return Source.f
+                return Source.from(Collections.singletonList())
             })
         })
     }
