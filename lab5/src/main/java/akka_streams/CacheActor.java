@@ -6,5 +6,11 @@ import akka.japi.Pair;
 import java.util.HashMap;
 
 public class CacheActor extends AbstractActor {
-    private final HashMap<Pair<String, Integer>, TestResult>
+    private final HashMap<Pair<String, Integer>, TestResult> cache = new HashMap<>();
+
+
+    @Override
+    public Receive createReceive() {
+        return null;
+    }
 }
