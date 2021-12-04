@@ -31,9 +31,9 @@ public class FlowCreator {
         }).mapAsync(10, request -> {
             TestResultParams msg = new TestResultParams(request.first(), request.second());
             return Patterns.ask(cacheActor, msg, Duration.ofSeconds(5)).thenCompose(response -> {
-                Optional<TestResult> result = (Optional<TestResult>) response;
-                if (result.isPresent()) {
-                    TestResult result = ((Optional<?>) response).get();
+                Optional<TestResult> res = (Optional<TestResult>) response;
+                if (res.isPresent()) {
+                    TestResult res = ((Optional<?>) response).get();
                 }
             })
         })
