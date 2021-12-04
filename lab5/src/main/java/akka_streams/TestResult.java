@@ -28,5 +28,5 @@ public class TestResult {
         return requestsTime / requestsCount;
     }
 
-    public TestResult
+    public TestResult add()
 }
