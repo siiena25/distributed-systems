@@ -66,6 +66,6 @@ public class FlowCreator {
         }).fold(new TestResult("", 0, 0), TestResult::add).map(param -> {
             cacheActor.tell(param, ActorRef.noSender());
             return param.getAverageRequestTime();
-        })
+        }).toMat()
     }
 }
