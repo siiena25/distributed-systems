@@ -1,6 +1,7 @@
 package akka_streams;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.Pair;
 
 import java.util.HashMap;
@@ -19,7 +20,7 @@ public class CacheActor extends AbstractActor {
                 testResultParams -> {
                     Pair<String, Integer> key = new Pair<>(testResultParams.getUrl(), testResultParams.getCount());
                     Optional<TestResult> testResult = Optional.ofNullable(cache.get(key));
-                    sender().tell();
+                    sender().tell(testResult, ActorRef.noSender());
                 }
         )
     }

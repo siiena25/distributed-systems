@@ -35,7 +35,7 @@ public class FlowCreator {
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
-        Flow.of(HttpRequest.class).map(param -> {
+        return Flow.of(HttpRequest.class).map(param -> {
             Query query = param.getUri().query();
             String url = query.getOrElse("testUrl", "");
             Integer count = query.get("count").map(Integer::parseInt).orElse(1);
@@ -53,9 +53,7 @@ public class FlowCreator {
                 Sink<Pair<String, Integer>, CompletionStage<Long>> sink = createSink();
                 return Source.from(Collections.singletonList(request)).toMat(sink, Keep.right()).run(materializer);
             });
-        }).map(param -> {
-            HttpResponse.create().withEntity(param.toString());
-        });
+        }).map(param -> HttpResponse.create().withEntity(param.toString()));
     }
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink() {
