@@ -20,6 +20,7 @@ public class FlowCreator {
     Flow<HttpRequest, HttpResponse, NotUsed> create() {
         Flow.of(HttpRequest.class).map(param -> {
             Query query = param.getUri().query();
+            String url = param.get
                 }
         )
     }
