@@ -22,6 +22,6 @@ public class CacheActor extends AbstractActor {
                     Optional<TestResult> testResult = Optional.ofNullable(cache.get(key));
                     sender().tell(testResult, ActorRef.noSender());
                 }
-        )
+        ).build();
     }
 }
