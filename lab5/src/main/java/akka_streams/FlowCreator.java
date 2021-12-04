@@ -10,6 +10,7 @@ import akka.pattern.Patterns;
 import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Sink;
+import org.asynchttpclient.AsyncHttpClient;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class FlowCreator {
         return Flow.<Pair<String, Integer>>create().mapConcat( param ->
                 IntStream.range(0, param.second()).mapToObj(i -> param).collect(Collectors.toCollection(ArrayList::new))
         ).mapAsync(10, param -> {
-            
+            AsyncHttpClient httpClient = 
         })
     }
 }
