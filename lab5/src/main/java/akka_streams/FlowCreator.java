@@ -27,7 +27,7 @@ public class FlowCreator {
             return new Pair<>(url, count);
         }).mapAsync(10, request -> {
             TestResultParams msg = new TestResultParams(request.first(), request.second());
-            return Patterns.ask()
+            return Patterns.ask(cacheActor, msg, )
         })
     }
 }
