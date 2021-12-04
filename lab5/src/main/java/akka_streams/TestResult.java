@@ -1,5 +1,7 @@
 package akka_streams;
 
 public class TestResult {
-    priv
+    private final String url;
+    private final int resuestsCount;
+    private final 
 }
