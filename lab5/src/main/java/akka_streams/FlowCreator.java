@@ -48,12 +48,13 @@ public class FlowCreator {
                     System.out.println("Average time: " + time);
                     return CompletableFuture.completedFuture(time);
                 }
-                Sink<Pair<String, Integer>, CompletionStage<Float>> sink = createSink();
+                Sink<Pair<String, Integer>, CompletionStage<Long>> sink = createSink();
+                
             })
         })
     }
 
-    private Sink<Pair<String, Integer>, CompletionStage<Float>> createSink() {
+    private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink() {
         return Flow.<Pair<String, Integer>>create().mapConcat( param ->
                 IntStream.range(0, param.second()).mapToObj(i -> param).collect(Collectors.toCollection(ArrayList::new))
         ).mapAsync(10, param -> {
