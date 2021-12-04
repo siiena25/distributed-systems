@@ -12,6 +12,7 @@ import akka.stream.javadsl.Flow;
 
 import java.time.Duration;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 public class FlowCreator {
     private final ActorRef cacheActor;
@@ -36,6 +37,7 @@ public class FlowCreator {
                     TestResult result = res.get();
                     float time = result.getAverageRequestTime();
                     System.out.println("Average time: " + time);
+                    return CompletableFuture.completedFuture(time);
                 }
             })
         })
