@@ -54,8 +54,8 @@ public class FlowCreator {
                 return Source.from(Collections.singletonList(request)).toMat(sink, Keep.right()).run(materializer);
             });
         }).map(param -> {
-            HttpResponse.create().withEntity()
-        })
+            HttpResponse.create().withEntity(param.toString());
+        });
     }
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink() {
