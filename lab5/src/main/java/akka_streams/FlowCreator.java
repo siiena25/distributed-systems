@@ -39,6 +39,7 @@ public class FlowCreator {
                     System.out.println("Average time: " + time);
                     return CompletableFuture.completedFuture(time);
                 }
+                
             })
         })
     }
