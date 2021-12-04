@@ -9,6 +9,7 @@ import akka.japi.Pair;
 import akka.pattern.Patterns;
 import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.Sink;
 
 import java.time.Duration;
 import java.util.Optional;
@@ -39,7 +40,7 @@ public class FlowCreator {
                     System.out.println("Average time: " + time);
                     return CompletableFuture.completedFuture(time);
                 }
-                
+                Sink<Pair<String, Integer>> 
             })
         })
     }
