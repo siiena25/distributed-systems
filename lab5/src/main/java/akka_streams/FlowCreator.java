@@ -63,6 +63,6 @@ public class FlowCreator {
                 System.out.println("Request time: " + time);
                 return CompletableFuture.completedFuture(new TestResult(param.first(), 1, time));
             });
-        }).fold(new TestResult("", 0, 0), )
+        }).fold(new TestResult("", 0, 0), TestResult)
     }
 }
