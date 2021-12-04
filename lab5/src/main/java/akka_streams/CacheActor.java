@@ -14,7 +14,7 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder().match(
                 TestResult.class,
-                testResult -> cache.put(new Pair<>(TestResult.get, TestResult.getRequestsCount()), testResult)
+                testResult -> cache.put(new Pair<>(testResult.getUrl(), testResult.getRequestsCount()), testResult)
         ).match(
                 TestResultParams.class,
                 testResultParams -> {
