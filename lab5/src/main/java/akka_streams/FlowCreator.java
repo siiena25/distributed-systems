@@ -49,7 +49,8 @@ public class FlowCreator {
 
     private Sink<Pair<String, Integer>, CompletionStage<Float>> createSink() {
         return Flow.<Pair<String, Integer>>create().mapConcat( param -> {
-            ArrayList<Pair<String, Integer>> 
+            ArrayList<Pair<String, Integer>> list = new ArrayList<>();
+            
         })
     }
 }
