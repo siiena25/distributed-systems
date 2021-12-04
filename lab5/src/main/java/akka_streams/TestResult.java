@@ -4,7 +4,7 @@ public class TestResult {
     private final String url;
     private final int requestsCount;
     private final int requestsTime;
-    private final int average
+    private final int averageRequestTime;
 
     public TestResult(String url, int requestsCount, int requestsTime) {
         this.url = url;
@@ -22,5 +22,9 @@ public class TestResult {
 
     public int getRequestsTime() {
         return requestsTime;
+    }
+
+    public int getAverageRequestTime() {
+        return requestsTime / requestsCount;
     }
 }
