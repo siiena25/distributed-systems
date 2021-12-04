@@ -57,6 +57,8 @@ public class FlowCreator {
                 IntStream.range(0, param.second()).mapToObj(i -> param).collect(Collectors.toCollection(ArrayList::new))
         ).mapAsync(10, param -> {
             AsyncHttpClient httpClient = asyncHttpClient();
+            long start = System.currentTimeMillis();
+            
         })
     }
 }
