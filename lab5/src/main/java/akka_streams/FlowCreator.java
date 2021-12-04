@@ -51,7 +51,7 @@ public class FlowCreator {
                     return CompletableFuture.completedFuture(time);
                 }
                 Sink<Pair<String, Integer>, CompletionStage<Long>> sink = createSink();
-                return Source.from(Collections.singletonList(request)).toMat(sink, Keep.right().)
+                return Source.from(Collections.singletonList(request)).toMat(sink, Keep.right()).run(materializer);
             })
         })
     }
