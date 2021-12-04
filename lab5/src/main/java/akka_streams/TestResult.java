@@ -29,6 +29,9 @@ public class TestResult {
     }
 
     public TestResult add(TestResult testResult) {
-        return new TestResult(testResult.getUrl(), getRequestsCount() + testResult.getRequestsCount(), g)
+        return new TestResult(
+                testResult.getUrl(),
+                getRequestsCount() + testResult.getRequestsCount(),
+                getRequestsTime() + testResult.getRequestsTime());
     }
 }
