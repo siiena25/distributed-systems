@@ -23,8 +23,7 @@ public class FlowCreator {
             Query query = param.getUri().query();
             String url = query.getOrElse("testUrl", "");
             Integer count = query.get("count").map(Integer::parseInt).orElse(1);
-            Pair<String, Integer> pair = new Pair<>(url, count);
-            return pair;
+            return new Pair<>(url, count);
         }).mapAsync()
     }
 }
