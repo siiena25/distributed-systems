@@ -25,7 +25,7 @@ public class FlowCreator {
         this.materializer = materializer;
     }
 
-    Flow<HttpRequest, HttpResponse, NotUsed> create() {
+    Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         Flow.of(HttpRequest.class).map(param -> {
             Query query = param.getUri().query();
             String url = query.getOrElse("testUrl", "");
@@ -41,7 +41,7 @@ public class FlowCreator {
                     System.out.println("Average time: " + time);
                     return CompletableFuture.completedFuture(time);
                 }
-                Sink<Pair<String, Integer>, CompletionStage<Float>>  
+                Sink<Pair<String, Integer>, CompletionStage<Float>> sink = createSink();
             })
         })
     }
