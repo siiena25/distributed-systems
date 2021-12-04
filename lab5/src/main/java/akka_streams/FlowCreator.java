@@ -6,6 +6,7 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
 import akka.japi.Pair;
+import akka.pattern.Patterns;
 import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 
@@ -26,7 +27,7 @@ public class FlowCreator {
             return new Pair<>(url, count);
         }).mapAsync(10, request -> {
             TestResultParams msg = new TestResultParams(request.first(), request.second());
-            return Patter
+            return Patterns.ask()
         })
     }
 }
