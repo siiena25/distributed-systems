@@ -16,7 +16,7 @@ public class TestResult {
         return url;
     }
 
-    public static int getRequestsCount() {
+    public int getRequestsCount() {
         return requestsCount;
     }
 
