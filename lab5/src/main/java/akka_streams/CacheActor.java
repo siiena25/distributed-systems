@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.japi.Pair;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 public class CacheActor extends AbstractActor {
     private final HashMap<Pair<String, Integer>, TestResult> cache = new HashMap<>();
@@ -16,7 +17,8 @@ public class CacheActor extends AbstractActor {
         ).match(
                 TestResultParams.class,
                 testResultParams -> {
-                    Pair<String, Integer> key = new Pair<>(testResultParams.getUrl(), testResultParams.getCount())
+                    Pair<String, Integer> key = new Pair<>(testResultParams.getUrl(), testResultParams.getCount());
+                    Optional<TestResult> testResult = 
                 }
         )
     }
