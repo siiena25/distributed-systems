@@ -10,6 +10,9 @@ public class CacheActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return receiveBuilder().match()
+        return receiveBuilder().match(
+                TestResult.class,
+                TestResult
+        )
     }
 }
