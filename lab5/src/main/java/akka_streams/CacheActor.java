@@ -16,7 +16,7 @@ public class CacheActor extends AbstractActor {
         ).match(
                 TestResultParams.class,
                 testResultParams -> {
-                    Pair<String, Integer> key = 
+                    Pair<String, Integer> key = new Pair<>(testResultParams.g)
                 }
         )
     }
