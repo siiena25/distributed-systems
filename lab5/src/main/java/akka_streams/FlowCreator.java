@@ -46,7 +46,7 @@ public class FlowCreator {
                 Optional<TestResult> res = (Optional<TestResult>) response;
                 if (res.isPresent()) {
                     TestResult result = res.get();
-                    float time = result.getAverageRequestTime();
+                    long time = result.getAverageRequestTime();
                     System.out.println("Average time: " + time);
                     return CompletableFuture.completedFuture(time);
                 }
