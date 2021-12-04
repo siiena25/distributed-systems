@@ -58,7 +58,7 @@ public class FlowCreator {
         ).mapAsync(10, param -> {
             AsyncHttpClient httpClient = asyncHttpClient();
             long start = System.currentTimeMillis();
-            return httpClient.prepareGet(param.first(), )
+            return httpClient.prepareGet(param.first()).execute().toCompletableFuture()
         })
     }
 }
