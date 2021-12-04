@@ -22,6 +22,7 @@ public class App {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final ActorRef cacheActor = system.actorOf(Props.create(CacheActor.class));
+        final FlowCreator flowCreator = 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
