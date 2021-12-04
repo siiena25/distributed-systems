@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class FlowCreator {
     private final ActorRef cacheActor;
@@ -49,10 +51,9 @@ public class FlowCreator {
 
     private Sink<Pair<String, Integer>, CompletionStage<Float>> createSink() {
         return Flow.<Pair<String, Integer>>create().mapConcat( param -> {
-            ArrayList<Pair<String, Integer>> list = new ArrayList<>();
-            for (int i = 0; i < param.second(); i++) {
-                list.add(param);
-            }
+            ArrayList<Pair<String, Integer>> list =
+                    IntStream.range(0, param.second()).mapToObj(i -> param).collect(Collectors.toCollection(ArrayList::new));
+            
         })
     }
 }
