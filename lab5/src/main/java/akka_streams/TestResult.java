@@ -12,7 +12,7 @@ public class TestResult {
         this.requestsTime = requestsTime;
     }
 
-    public static String getUrl() {
+    public String getUrl() {
         return url;
     }
 
