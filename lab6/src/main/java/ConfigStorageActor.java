@@ -1,2 +1,2 @@
-public class ConfixStorageActor {
+public class ConfigStorageActor {
 }
