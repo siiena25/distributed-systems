@@ -1,4 +1,5 @@
 import akka.actor.AbstractActor;
+import com.sun.net.httpserver.HttpServer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,6 @@ public class ConfigStorageActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return null;
+        return receiveBuilder().match(HttpServer.);
     }
 }
