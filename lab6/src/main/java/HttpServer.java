@@ -29,24 +29,32 @@ public class HttpServer implements Watcher {
     }
 
     public Route createRoute() {
-        return route(
-                path("", () ->
-                        route(
-                                get(() ->
+        return route(path("", () ->
+                        route(get(() ->
                                         parameter("url", (url) ->
                                                 parameter("count", (count) -> {
                                                     if (count.equals("0")) {
-                                                        return completeWithFuture(http.singleRequest(HttpRequest.create(url)));
+                                                        return completeWithFuture(
+                                                                http.singleRequest(HttpRequest.create(url))
+                                                        );
                                                     }
                                                     return completeWithFuture(Patterns
                                                             .ask(actorConf, new MessageObject(), Duration.ofMillis(5000))
                                                             .thenCompose(port ->
                                                                     http.singleRequest(HttpRequest.create(
-                                                                            String.format()
+                                                                            String.format(
+                                                                                    "http://%s/?url=%s&count=%d",
+                                                                                    port,
+                                                                                    url,
+                                                                                    Integer.parseInt(count) - 1
+                                                                            )
                                                                     )))
-                                                    ))
-
-                                                })))));
+                                                    );
+                                                })
+                                        )
+                                )
+                        )
+                )
         );
     }
 
