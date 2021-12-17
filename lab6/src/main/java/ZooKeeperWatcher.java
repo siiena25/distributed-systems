@@ -11,9 +11,15 @@ public class ZooKeeperWatcher implements Watcher {
     private final ZooKeeper zooKeeper;
     private final ActorRef actorConf;
 
-    public ZooKeeper(ZooKeeper zooKeeper, ActorRef actorConf) {
+    public ZooKeeperWatcher(ZooKeeper zooKeeper, ActorRef actorConf) {
         this.zooKeeper = zooKeeper;
         this.actorConf = actorConf;
+        try {
+            byte[] data = this.zooKeeper.getData("/servers", true, null);
+        } catch (KeeperException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        sendServers();
     }
     @Override
     public void process(WatchedEvent watchedEvent) {
@@ -34,6 +40,18 @@ public class ZooKeeperWatcher implements Watcher {
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
-        actorConf.tell(servers, ActorRef.noSender());
+        actorConf.tell(new MessageSendServersList(servers), ActorRef.noSender());
+    }
+
+    static class MessageSendServersList {
+        private final List<String> servers;
+
+        public MessageSendServersList(List<String> servers) {
+            this.servers = servers;
+        }
+
+        public List<String> getServers() {
+            return servers;
+        }
     }
 }
