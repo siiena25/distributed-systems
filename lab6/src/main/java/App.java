@@ -33,8 +33,7 @@ public class App {
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
         final Http http = Http.get(system);
 
-        ZooKeeper zooKeeper = null;
-        zooKeeper = new ZooKeeper(args[0], 3000, null);
+        ZooKeeper zooKeeper = new ZooKeeper(args[0], 3000, null);
         new ZooKeeperWatcher(zooKeeper, configStorageActor);
 
         List<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
