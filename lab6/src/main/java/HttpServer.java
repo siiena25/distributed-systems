@@ -5,6 +5,8 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import org.apache.zookeeper.*;
 
+import java.time.Duration;
+
 import static akka.http.javadsl.server.Directives.*;
 
 public class HttpServer implements Watcher {
@@ -37,7 +39,7 @@ public class HttpServer implements Watcher {
                                                         return completeWithFuture(http.singleRequest(HttpRequest.create(url)));
                                                     }
                                                     return completeWithFuture(Patterns.ask(
-                                                            actorConf, null, 
+                                                            actorConf, new MessageObject(), Duration.ofMillis(5000))
                                                     ))
 
                                                 })))));
