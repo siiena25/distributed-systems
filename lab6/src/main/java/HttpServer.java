@@ -38,8 +38,12 @@ public class HttpServer implements Watcher {
                                                     if (count.equals("0")) {
                                                         return completeWithFuture(http.singleRequest(HttpRequest.create(url)));
                                                     }
-                                                    return completeWithFuture(Patterns.ask(
-                                                            actorConf, new MessageObject(), Duration.ofMillis(5000))
+                                                    return completeWithFuture(Patterns
+                                                            .ask(actorConf, new MessageObject(), Duration.ofMillis(5000))
+                                                            .thenCompose(port ->
+                                                                    http.singleRequest(HttpRequest.create(
+                                                                            String.format()
+                                                                    )))
                                                     ))
 
                                                 })))));
@@ -53,5 +57,8 @@ public class HttpServer implements Watcher {
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    private class MessageObject {
     }
 }
