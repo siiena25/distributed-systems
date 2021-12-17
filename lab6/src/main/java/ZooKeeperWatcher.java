@@ -16,16 +16,17 @@ public class ZooKeeperWatcher implements Watcher {
         this.actorConf = actorConf;
         try {
             byte[] data = this.zooKeeper.getData("/servers", true, null);
+            System.out.println("servers data=" + new String(data));
+            sendServers();
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
-        sendServers();
     }
     @Override
     public void process(WatchedEvent watchedEvent) {
         try {
             zooKeeper.getChildren("/servers", this);
-
+            sendServers();
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
