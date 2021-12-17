@@ -53,7 +53,7 @@ public class App {
         if (bindings.size() == 0) {
             System.err.println("No servers are running!");
         }
-
+        System.out.println(serversInfo + "\nPress RETURN to stop...");
         System.in.read();
         for (CompletionStage<ServerBinding> bindingCompletionStage : bindings) {
             bindingCompletionStage

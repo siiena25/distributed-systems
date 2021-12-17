@@ -9,7 +9,6 @@ public class ConfigStorageActor extends AbstractActor {
     private List<String> listServers = new ArrayList<>();
     private final Random random = new Random();
 
-
     @Override
     public Receive createReceive() {
         return receiveBuilder()
