@@ -9,13 +9,13 @@ import java.time.Duration;
 
 import static akka.http.javadsl.server.Directives.*;
 
-public class HttpServer implements Watcher {
+public class ServerHttp implements Watcher {
     private final Http http;
     private final ActorRef actorConf;
     private final ZooKeeper zooKeeper;
     private final String path;
 
-    public HttpServer(Http http, ActorRef actorConf, ZooKeeper zooKeeper, String port) throws InterruptedException, KeeperException {
+    public ServerHttp(Http http, ActorRef actorConf, ZooKeeper zooKeeper, String port) throws InterruptedException, KeeperException {
         this.http = http;
         this.actorConf = actorConf;
         this.zooKeeper = zooKeeper;

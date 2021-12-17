@@ -40,7 +40,7 @@ public class App {
         List<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
         StringBuilder serversInfo = new StringBuilder("Servers online at\n");
         for (int i = 1; i < args.length; i++) {
-            HttpServer httpServer = new HttpServer(http, configStorageActor, zooKeeper, args[i]);
+            ServerHttp httpServer = new ServerHttp(http, configStorageActor, zooKeeper, args[i]);
             final Flow<HttpRequest, HttpResponse, ?> routeFlow = httpServer.createRoute().flow(system, actorMaterializer);
             bindings.add(http.bindAndHandle(
                     routeFlow,
