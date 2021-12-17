@@ -31,6 +31,9 @@ public class HttpServer implements Watcher {
                                 get(() ->
                                         parameter("url", (url) ->
                                                 parameter("count", (count) -> {
+                                                    if (count.equals("0")) {
+                                                        return compl
+                                                    }
 
                                                 })))));
         );
