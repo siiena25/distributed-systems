@@ -2,6 +2,7 @@ import akka.actor.ActorRef;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import org.apache.zookeeper.*;
 
 import static akka.http.javadsl.server.Directives.*;
@@ -35,6 +36,9 @@ public class HttpServer implements Watcher {
                                                     if (count.equals("0")) {
                                                         return completeWithFuture(http.singleRequest(HttpRequest.create(url)));
                                                     }
+                                                    return completeWithFuture(Patterns.ask(
+                                                            actorConf, null, 
+                                                    ))
 
                                                 })))));
         );
