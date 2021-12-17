@@ -2,6 +2,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.stream.ActorMaterializer;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.zookeeper.ZooKeeper;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CompletionStage;
 
 public class App {
 
@@ -30,6 +32,7 @@ public class App {
         zooKeeper = new ZooKeeper(args[0], 3000, null);
         new ZooKeeperWatcher(zooKeeper, configStorageActor);
 
-        List<CSta>
+        List<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
+        StringBuilder serversInfo = new StringBuilder("Servers online at\n")
     }
 }
