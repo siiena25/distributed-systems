@@ -67,6 +67,6 @@ public class HttpServer implements Watcher {
         }
     }
 
-    private class MessageObject {
+    private static class MessageObject {
     }
 }
