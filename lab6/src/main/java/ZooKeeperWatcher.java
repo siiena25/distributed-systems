@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ZooKeeperWatcher implements Watcher {
+    private static final String PATH = "/servers";
     private final ZooKeeper zooKeeper;
     private final ActorRef actorConf;
 
@@ -15,7 +16,7 @@ public class ZooKeeperWatcher implements Watcher {
         this.zooKeeper = zooKeeper;
         this.actorConf = actorConf;
         try {
-            byte[] data = this.zooKeeper.getData("/servers", true, null);
+            byte[] data = this.zooKeeper.getData(PATH, true, null);
             System.out.println("servers data=" + new String(data));
             sendServers();
         } catch (KeeperException | InterruptedException e) {
@@ -25,7 +26,7 @@ public class ZooKeeperWatcher implements Watcher {
     @Override
     public void process(WatchedEvent watchedEvent) {
         try {
-            zooKeeper.getChildren("/servers", this);
+            zooKeeper.getChildren(PATH, this);
             sendServers();
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
@@ -35,8 +36,8 @@ public class ZooKeeperWatcher implements Watcher {
     private void sendServers() {
         List<String> servers = new ArrayList<>();
         try {
-            for (String s : zooKeeper.getChildren("/servers", this)) {
-                servers.add(new String(zooKeeper.getData("/servers/" + s, false, null)));
+            for (String s : zooKeeper.getChildren(PATH, this)) {
+                servers.add(new String(zooKeeper.getData(PATH + "/" + s, false, null)));
             }
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
