@@ -39,7 +39,7 @@ public class ServerHttp implements Watcher {
                                                         );
                                                     }
                                                     return completeWithFuture(Patterns
-                                                            .ask(actorConf, new MessageObject(), Duration.ofMillis(5000))
+                                                            .ask(actorConf, new MessageGetRandomServer(), Duration.ofMillis(5000))
                                                             .thenCompose(port ->
                                                                     http.singleRequest(HttpRequest.create(
                                                                             String.format(
@@ -67,7 +67,7 @@ public class ServerHttp implements Watcher {
         }
     }
 
-    static class MessageObject {
-        public MessageObject() {}
+    static class MessageGetRandomServer {
+        public MessageGetRandomServer() {}
     }
 }
