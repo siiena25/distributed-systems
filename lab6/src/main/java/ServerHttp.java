@@ -17,6 +17,7 @@ public class ServerHttp implements Watcher {
     private final String path;
     private final String URL_PARAMETER = "url";
     private final String COUNT_PARAMETER = "count";
+    private final String ZERO_COUNTER = "0";
 
     public ServerHttp(Http http, ActorRef actorConf, ZooKeeper zooKeeper, String port) throws InterruptedException, KeeperException {
         this.http = http;
@@ -36,7 +37,7 @@ public class ServerHttp implements Watcher {
                         route(get(() ->
                                         parameter(URL_PARAMETER, (url) ->
                                                 parameter(COUNT_PARAMETER, (count) -> {
-                                                    if (count.equals("0")) {
+                                                    if (count.equals(ZERO_COUNTER)) {
                                                         return completeWithFuture(
                                                                 http.singleRequest(HttpRequest.create(url))
                                                         );
