@@ -10,16 +10,19 @@ import java.time.Duration;
 import static akka.http.javadsl.server.Directives.*;
 
 public class ServerHttp implements Watcher {
+    private static final String HOST = "localhost:";
     private final Http http;
     private final ActorRef actorConf;
     private final ZooKeeper zooKeeper;
     private final String path;
+    private final String URL_PARAMETER = "url";
+    private final String COUNT_PARAMETER = "count";
 
     public ServerHttp(Http http, ActorRef actorConf, ZooKeeper zooKeeper, String port) throws InterruptedException, KeeperException {
         this.http = http;
         this.actorConf = actorConf;
         this.zooKeeper = zooKeeper;
-        this.path = "localhost:" + port;
+        this.path = HOST + port;
         zooKeeper.create(
                 "/servers/" + path,
                 path.getBytes(),
@@ -31,8 +34,8 @@ public class ServerHttp implements Watcher {
     public Route createRoute() {
         return route(path("", () ->
                         route(get(() ->
-                                        parameter("url", (url) ->
-                                                parameter("count", (count) -> {
+                                        parameter(URL_PARAMETER, (url) ->
+                                                parameter(COUNT_PARAMETER, (count) -> {
                                                     if (count.equals("0")) {
                                                         return completeWithFuture(
                                                                 http.singleRequest(HttpRequest.create(url))
