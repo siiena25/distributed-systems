@@ -18,6 +18,7 @@ public class ServerHttp implements Watcher {
     private final String URL_PARAMETER = "url";
     private final String COUNT_PARAMETER = "count";
     private final String ZERO_COUNTER = "0";
+    private final String PATTERN_URL = "http://%s/?url=%s&count=%d";
 
     public ServerHttp(Http http, ActorRef actorConf, ZooKeeper zooKeeper, String port) throws InterruptedException, KeeperException {
         this.http = http;
@@ -47,7 +48,7 @@ public class ServerHttp implements Watcher {
                                                             .thenCompose(port ->
                                                                     http.singleRequest(HttpRequest.create(
                                                                             String.format(
-                                                                                    "http://%s/?url=%s&count=%d",
+                                                                                    PATTERN_URL,
                                                                                     port,
                                                                                     url,
                                                                                     Integer.parseInt(count) - 1
