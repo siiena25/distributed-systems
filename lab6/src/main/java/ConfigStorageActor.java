@@ -12,11 +12,11 @@ public class ConfigStorageActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(ServerHttp.MessageGetRandomServer.class, messageObject -> {
+                .match(ServerHttp.MessageGetRandomServer.class, message -> {
                     sender().tell(getRandomServerPort(), ActorRef.noSender());
                 })
-                .match(ZooKeeperWatcher.MessageSendServersList.class, messageSendServersList -> {
-                    listServers = messageSendServersList.getServers();
+                .match(ZooKeeperWatcher.MessageSendServersList.class, message -> {
+                    listServers = message.getServers();
                 })
                 .build();
     }
